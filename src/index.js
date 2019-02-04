@@ -6,6 +6,6 @@ import './index.css'
 
 ReactDOM.render(
   <Router>
-      <Nutshell />
+      <Nutshell/>
   </Router>
   , document.getElementById('root'))
