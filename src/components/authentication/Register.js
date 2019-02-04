@@ -1,0 +1,98 @@
+import React, { Component } from "react"
+import "./Login.css"
+// import { Link } from "react-router-dom"
+// import LoginManager from '../../modules/LoginManager'
+import dividerLine from'./dividerLine.png';
+import inputBox from'./inputBox.png';
+import backArrow from './backArrow.png'
+
+
+
+
+export default class Register extends Component {
+
+    // Set initial state
+    state = {
+        username: "",
+        password: ""
+    }
+
+    // Update state whenever an input field is edited
+    handleFieldChange = (evt) => {
+        const stateToChange = {}
+        stateToChange[evt.target.id] = evt.target.value
+        this.setState(stateToChange)
+    }
+
+
+    // Simplistic handler for login submit
+    handleRegister = (e) => {
+        e.preventDefault()
+
+        /*
+            For now, just store the email and password that
+            the customer enters into local storage.
+        */
+        // sessionStorage.setItem(
+        //     "credentials",
+        //     JSON.stringify({
+        //         username: this.state.username,
+        //         password: this.state.password,
+        //         id: this.state.id
+        //     })
+        // )
+    }
+
+
+    constructNewUser = () => {
+            const user = {
+                username: this.state.username,
+                password: this.state.password,
+                id: this.state.id
+            }
+
+            this.props.addUser(user).then(response => {
+                console.log(response)
+                this.props.updateComponent()
+                this.props.history.push("/login")
+                // window.location.reload();
+            })
+    }
+
+    render() {
+        return (
+            <section className="register">
+            <img src={backArrow} onClick={() => this.props.history.push("/login")} className="registerBackArrow" alt="backArrow"></img>
+                <form onSubmit={this.handleRegister}>
+                {/* <img src={back} onClick={() => this.props.history.push("/login")} className="backButton" alt="backButton" height="30" width="30"></img> */}
+                    <h2>Sign up for</h2>
+                    <h1><strong>L A N T E R N</strong></h1>
+                    <img src={dividerLine} className="registerDividerLine" alt="dividerLine"></img>
+                    <img src={inputBox} className="registerInputBox" alt="inputBox"></img>
+                    <label htmlFor="inputUsername">
+                    </label><br></br>
+
+                    <section className="moveInputLines">
+                    <input onChange={this.handleFieldChange} type="text"
+                        id="username"
+                        placeholder="Enter a username"
+                        required autoFocus="" />
+                        <br></br>
+                    <label htmlFor="inputPassword">
+                    </label>
+                    <br></br>
+                    <input onChange={this.handleFieldChange} type="password"
+                        id="password"
+                        placeholder="Enter a password"
+                        required />
+                        <br></br>
+                        </section>
+                    <button type="submit" onClick={() => this.constructNewUser()} className="btn btn-primary signIn">
+                        Sign Up
+                    </button>
+                </form>
+
+            </section>
+        )
+    }
+}

@@ -1,25 +1,25 @@
 import React, { Component } from "react"
-import { Link } from "react-router-dom"
+import { Link, Redirect } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
+import "./NavBar.css"
+import home from'./NavAssests/home.png';
+
+
 
 
 class NavBar extends Component {
     render() {
         return (
-            <nav className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
-                <ul className="nav nav-pills nav-fill">
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/">News</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/friends">Friends</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/messages">Messages</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/tasks">Tasks</Link>
-                    </li>
+            <nav className="navbar navbar-light flex-md-nowrap p-0 shadow footer">
+                <ul className="nav nav-pills nav-fill ulContainer">
+                {/* Inserting the icon for the navigation at the footer of the application */}
+                <li>
+                <Link className="nav-link" to="/"> <img src={home} className="homeIcon nav-item"  alt="homeIcon" height="24" width="24">
+                </img></Link>
+                </li>
+
+                {/* <Link className="nav-link" to="/"> </Link> */}
+
                 </ul>
             </nav>
         )
