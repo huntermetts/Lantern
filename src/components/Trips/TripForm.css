@@ -1,0 +1,49 @@
+.formContainer{
+    border:6px solid black;
+    padding: 50px;
+    margin-top:50px;
+    background-color: #B5E2E7;
+}
+
+.going{
+    text-align: center;
+    padding-top:58px;
+    font-family: Rockwell, sans-serif;
+}
+
+.addNewTrip{
+    margin-top:30px;
+    background-color:rgba(209, 108, 77, .5);
+    border:3px solid black;
+    padding-right: 30px;
+    padding-left: 30px;
+    color:black;
+    font-weight: bold;
+}
+
+.tripsBackArrow{
+    margin-top: 20px;
+    margin-left:20px;
+}
+
+.goingUpdate{
+    text-align: center;
+    padding-top:10px;
+    font-family: Rockwell, sans-serif;
+}
+
+.updateTrip{
+    margin-top:20px;
+    background-color:rgba(209, 108, 77, .5);
+    border:3px solid black;
+    padding-right: 30px;
+    padding-left: 30px;
+    color:black;
+    font-weight: bold;
+}
+
+.goingUpdateHeader{
+    text-align: center;
+    padding-top:30px;
+    font-family: Rockwell, sans-serif;
+}
