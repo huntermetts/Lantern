@@ -10,7 +10,7 @@ import home from'./NavAssests/home.png';
 class NavBar extends Component {
     render() {
         return (
-            <nav className="navbar navbar-light flex-md-nowrap p-0 shadow footer">
+            <nav className="navbar navbar-light flex-md-nowrap pb-0 shadow footer">
                 <ul className="nav nav-pills nav-fill ulContainer">
                 {/* Inserting the icon for the navigation at the footer of the application */}
                 <li>
