@@ -9,6 +9,8 @@ import Tripspage from "./Trips/Tripspage";
 import TripsManager from '../modules/TripsManager'
 import TripForm from './Trips/TripForm'
 import TripEditForm from "./Trips/TripEditForm"
+import ParksMainPage from "./Parks/ParksMainPage"
+import ApiManager from "../modules/ApiManager"
 
 
 export default class ApplicationViews extends Component {
@@ -16,7 +18,8 @@ export default class ApplicationViews extends Component {
   state = {
     users: [],
     trips: [],
-    backpack: []
+    backpack: [],
+    parkName:""
   };
 
   // Check if credentials are in local storage
@@ -74,7 +77,7 @@ export default class ApplicationViews extends Component {
     })
   )
 
-  //  EDIT A TASK:
+  //  EDIT A TRIP:
   updateTrip = (tripId, editedTripObj) => {
     return TripsManager.put(tripId, editedTripObj)
       .then(() => TripsManager.getAllTrips())
@@ -83,6 +86,19 @@ export default class ApplicationViews extends Component {
           trips: trips
         })
       })
+  }
+
+  // API Call for National Park Name:
+  getParkName = (parkName) => {
+    return ApiManager.parkNameCall(`${parkName} national park`)
+    .then (names => {
+      names.data.forEach(name => {
+        console.log(name.fullName)
+        this.setState({
+          parkName: name.fullName
+        })
+      })
+    })
   }
 
 
@@ -97,6 +113,7 @@ export default class ApplicationViews extends Component {
           exact path="/" render={props => {
             if (this.isAuthenticated()) {
             return <Searchpage {...props}
+            getParkName={this.getParkName}
             />
           } else {
             return <Redirect to="/login" />
@@ -147,11 +164,12 @@ export default class ApplicationViews extends Component {
 
 
         <Route
-          path="/messages" render={props => {
-            return null
-            // Remove null and return the component which will show the messages
-          }}
-        />
+          path="/parksMainPage" render={props => {
+            return <ParksMainPage {...props}
+            parkName={this.state.parkName}
+                  />
+            }} />
+
 
         <Route
           path="/tasks" render={props => {

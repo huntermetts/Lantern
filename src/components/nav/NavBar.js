@@ -7,7 +7,7 @@ import home from'./NavAssests/home.png';
 
 
 
-class NavBar extends Component {
+export default class NavBar extends Component {
     render() {
         return (
             <nav className="navbar navbar-light flex-md-nowrap pb-0 shadow footer">
@@ -25,5 +25,3 @@ class NavBar extends Component {
         )
     }
 }
-
-export default NavBar
