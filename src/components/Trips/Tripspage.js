@@ -4,6 +4,7 @@ import "./Tripspage.css"
 import { Link } from "react-router-dom";
 import NavBar from "../nav/NavBar";
 import add from "./add.png"
+import backArrow from './backArrow.png'
 // import AnimalCard from "./AnimalCard"
 
 export default class Tripspage extends Component {
@@ -11,12 +12,12 @@ export default class Tripspage extends Component {
     render () {
         return (
             <React.Fragment>
-            <NavBar />
+            <img src={backArrow} className="backToSearchButton" onClick={() => this.props.history.push("/")}></img>
             <section className="trips">
 
                  {/* ADD TRIP BUTTON */}
                  <section className="tripButton" onClick={() => { this.props.history.push("/trips/new")}}>
-            <img src={add} className="addTripButton" alt="addIcon" height="35" width="35"></img>
+            <img src={add} className="addTripButton" alt="addIcon" height="39" width="39"></img>
             </section>
 
 

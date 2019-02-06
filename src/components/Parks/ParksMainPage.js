@@ -10,60 +10,71 @@ import gas from "./gas.png"
 import markets from "./markets.png"
 import weather from "./weather.png"
 import dividerLine from "./dividerLine.png"
+import backArrow from './backArrow.png'
+import look from './look.svg'
 
 
 
 
 export default class ParksMainPage extends Component {
+
+    backToSearch = () => {
+        this.props.resetSearch()
+        this.props.history.push("/")
+    }
+
     render() {
 
         let displayName = ""
         if (this.props.parkName === ""){
-            displayName = `Sorry... Either the park name was spelled incorrectly or
-             this park isn't in our database :(`
+            displayName = `Oh no... we couldn't find that park :(`
              return (
                 <React.Fragment>
-                <NavBar />
-                <h1 className="parkName">{displayName}</h1>
+                <img src={backArrow} className="backToSearchButton" alt="back" onClick={() => this.backToSearch()}></img>
+                <h3 className="parkNameNotFound">{displayName}</h3>
+                <img src={look} className="l404" alt="look" height="296" width="393"></img>
               </React.Fragment>
             )
         } else {
             displayName = this.props.parkName
             return (
                 <React.Fragment>
-                <NavBar />
+
+                <img src={backArrow} className="backToSearchButton" alt="back" onClick={() => this.backToSearch()}></img>
+
+
                 <h1 className="parkName">{displayName}</h1>
 
                     <img src={dividerLine} className="mainPageDividerLine" alt="dividerLine"></img>
 
                 <section className="iconContainer">
                 <figure>
-                    <img src={details} onClick={() => this.props.history.push('/')} className="detailsIcon" alt="detailsIcon" height="100" width="100"></img>
-                    <figcaption className="parkCorrect">Park Features</figcaption>
+                    <img src={details} onClick={() => this.props.history.push("/parkDescription")} className="detailsIcon" alt="detailsIcon" height="100" width="100"></img>
+                    <figcaption className="parkCorrect">Park Info</figcaption>
                 </figure>
 
                 <figure>
-                    <img src={amenities} onClick={() => this.props.history.push('/')}  className="amenitiesIcon" alt="amenitiesIcon" height="100" width="100"></img>
+                    <img src={amenities} onClick={() => this.props.history.push('/parkAmenities')}  className="amenitiesIcon" alt="amenitiesIcon" height="100" width="100"></img>
                     <figcaption className="amenCorrect">Amenities</figcaption>
                 </figure>
 
                 <figure>
-                    <img src={camping} onClick={() => this.props.history.push('/')}  className="campingIcon" alt="campingIcon" height="100" width="100"></img>
+                    <img src={camping} onClick={() => this.props.history.push('/parkCamping')}  className="campingIcon" alt="campingIcon" height="100" width="100"></img>
                     <figcaption className="campingCorrect">Camping</figcaption>
                 </figure>
 
                 <figure >
-                    <img src={gas} onClick={() => this.props.history.push('/')} className="gasIcon" alt="gasIcon" height="100" width="100"></img>
+                    <img src={gas} onClick={() => this.props.history.push('/parkGas')} className="gasIcon" alt="gasIcon" height="100" width="100"></img>
                     <figcaption className="gasCorrect">Gas Stations</figcaption>
                 </figure>
 
                 <figure >
-                    <img src={markets} onClick={() => this.props.history.push('/')}  className="marketsIcon" alt="marketsIcon" height="100" width="100"></img>
+                    <img src={markets} onClick={() => this.props.history.push('/parkMarket')}  className="marketsIcon" alt="marketsIcon" height="100" width="100"></img>
                     <figcaption className="marketCorrect">Markets</figcaption>
                 </figure>
 
                 <figure >
-                    <img src={weather} onClick={() => this.props.history.push('/')}  className="weatherIcon" alt="weatherIcon" height="100" width="100"></img>
+                    <img src={weather} onClick={() => this.props.history.push('/parkWeather')}  className="weatherIcon" alt="weatherIcon" height="100" width="100"></img>
                     <figcaption className="weatherCorrect">Weather</figcaption>
                 </figure>
                 </section>
@@ -73,11 +84,6 @@ export default class ParksMainPage extends Component {
 
                 <button type="submit" className="btn btn-dark mapIt" >Map It</button>
                 </section>
-
-
-
-
-
               </React.Fragment>
             )
         }

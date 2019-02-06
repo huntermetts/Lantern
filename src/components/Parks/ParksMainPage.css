@@ -1,6 +1,8 @@
 .parkName {
     text-align: center;
     padding-top:20px;
+    padding-right:2px;
+    padding-left:2px;
     font-family: Rockwell, sans-serif;
     font-weight: bold;
     line-height: 60px;
@@ -52,7 +54,7 @@
 }
 
 .parkCorrect{
-    margin-left: 0px;
+    margin-left: 15px;
     margin-top: -63px;
     margin-bottom: 20px;
 }
@@ -92,4 +94,10 @@
 .mainButtonHolder{
 display: flex;
 justify-content: space-evenly;
+}
+
+.parkNameNotFound{
+    text-align: center;
+    padding: 25px;
+    line-height: 50px;
 }

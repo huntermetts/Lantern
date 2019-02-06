@@ -23,7 +23,7 @@ class Searchpage extends Component {
         let name = sessionStorage.getItem('username');
         return (
             <React.Fragment>
-            <NavBar />
+
             <section className="searchAPI">
                 <form className="searchContainer" onSubmit={this.handleLogin}>
                                    <h2>Welcome,</h2>
@@ -48,6 +48,7 @@ class Searchpage extends Component {
                     <button type="submit" onClick={(event) =>{
                         event.preventDefault()
                         this.props.getParkName(this.state.searchParkName)
+                        this.props.getParkCampsitesAndAminities(this.state.searchParkName)
                         .then(()=> {
                             this.props.history.push("/parksMainPage")
                         } )
