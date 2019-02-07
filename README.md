@@ -3,16 +3,14 @@
 ## Lantern makes camping in our National Parks easy.
 You can:
 - Login and quickly search through America’s National Parks to view:
-- Parks Features (Canyons, Lakes, Mountains)
-- Amenities (bathrooms, running water, firewood for sale)
-- Camping Info (how many campsites the park has available)
+- Parks Features (Canyons, Lakes, Mountains).
+- Amenities (bathrooms, running water, firewood for sale).
+- Camping Info (how many campsites the park has available).
 - See Weather averages of the park.
-- Save your trips, edit your trips, and delete your trips (specific to    the user).
+- Save your trips, edit your trips, and delete your trips (specific to the user).
 - See Weather averages of the park.
-
-### Yet to be done
-- See gas stations near that park
-- See Markets near that park
+- See gas stations near that park.
+- See Markets near that park.
 
 ![](lantern.gif)
 
