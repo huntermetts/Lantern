@@ -16,6 +16,8 @@ import ParksWeatherPage from "./Parks/ParksWeatherPage"
 import ParksCampingPage from "./Parks/ParksCampingPage"
 import ParksAmenitiesPage from "./Parks/ParksAmenitiesPage"
 import ParksMapIt from "./Parks/ParksMapIt"
+import ParksGasStations from "./Parks/ParksGasStations";
+import ParksMarket from  "./Parks/ParksMarket"
 
 
 export default class ApplicationViews extends Component {
@@ -113,7 +115,7 @@ export default class ApplicationViews extends Component {
         // console.log(name.fullName)
         // console.log(name.description)
         // console.log(name.weatherInfo)
-        // console.log(name.latLong)
+        console.log(name.latLong)
         this.setState({
           parkName: name.fullName,
           parkDescription:name.description,
@@ -241,14 +243,18 @@ getParkCampsitesAndAminities = (parkName) => {
 
         <Route
           path="/parkGas" render={props => {
-            return <h1>Park Gas map here</h1>
+            return <ParksGasStations {...props}
+            parkName={this.state.parkName}
+            />
             // Remove null and return the component which will show the user's tasks
           }}
         />
 
         <Route
           path="/parkMarket" render={props => {
-            return <h1>Park Market map here</h1>
+            return <ParksMarket {...props}
+            parkName={this.state.parkName}
+            />
             // Remove null and return the component which will show the user's tasks
           }}
         />
