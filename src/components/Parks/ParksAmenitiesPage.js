@@ -78,7 +78,7 @@ export default class ParksAmenitiesPage extends Component {
                 </section>
 
                 <h3 className="descriptionHeader"><strong>{this.props.parkName}</strong> Campground
-                Aminities</h3>
+                Amenities</h3>
 
                  <img src={dividerLine} className="campingDividerLineTop" alt="dividerLine"></img>
 

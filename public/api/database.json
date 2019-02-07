@@ -4,6 +4,16 @@
       "id": 1,
       "username": "userName",
       "password": "123"
+    },
+    {
+      "username": "mary",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "username": "austin",
+      "password": "123",
+      "id": 3
     }
   ],
   "trips": [
