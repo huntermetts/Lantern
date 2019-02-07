@@ -21,9 +21,16 @@ You can:
 1. Copy the URL generated when the button is clicked.
 1. Open terminal.
 1. Type `git clone` and then paste the URL from step 2.
-1. Navigate into the "lib" folder
-1. Once in "lib" folder, type `npm install`
+1. Navigate into the root folder using `cd Lantern`
+1. Once in root folder, type `npm install`
 1. Type `npm start`
+1. Go back to the terminal to start the JSON server
+1. Navigate into the "api" folder
+1. Run `json-server -p 5002 -w database.json`
+1. Once in the browser open your developer tools
+1. Toggle the device toolbar (to the right of inspector button)
+1. Set the device size to "iPhone 6/7/8"
+1. Refresh the page in your browser
 1. After steps listed above are complete you should be ready to use the app!
 Thanks and happy camping!
 
