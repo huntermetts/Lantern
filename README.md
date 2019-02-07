@@ -10,7 +10,7 @@ You can:
 - Save your trips, edit your trips, and delete your trips (specific to    the user).
 - See Weather averages of the park.
 
-### __________Yet to be done___________
+### Yet to be done
 - See gas stations near that park
 - See Markets near that park
 
