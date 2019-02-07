@@ -25,7 +25,7 @@ You can:
 1. Once in root folder, type `npm install`
 1. Type `npm start`
 1. Go back to the terminal to start the JSON server
-1. Navigate into the "api" folder
+1. Navigate into the "api" folder by `cd public/api`
 1. Run `json-server -p 5002 -w database.json`
 1. Once in the browser open your developer tools
 1. Toggle the device toolbar (to the right of inspector button)
