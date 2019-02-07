@@ -11,6 +11,11 @@ import TripForm from './Trips/TripForm'
 import TripEditForm from "./Trips/TripEditForm"
 import ParksMainPage from "./Parks/ParksMainPage"
 import ApiManager from "../modules/ApiManager"
+import ParksDescriptionPage from "./Parks/ParksDescriptionPage"
+import ParksWeatherPage from "./Parks/ParksWeatherPage"
+import ParksCampingPage from "./Parks/ParksCampingPage"
+import ParksAmenitiesPage from "./Parks/ParksAmenitiesPage"
+import ParksMapIt from "./Parks/ParksMapIt"
 
 
 export default class ApplicationViews extends Component {
@@ -19,7 +24,11 @@ export default class ApplicationViews extends Component {
     users: [],
     trips: [],
     backpack: [],
-    parkName:""
+    parkName:"",
+    parkDescription: "",
+    parkWeather: "",
+    parklatLong: "",
+    parkCampgrounds:[]
   };
 
   // Check if credentials are in local storage
@@ -53,6 +62,14 @@ export default class ApplicationViews extends Component {
           trips: allTrips
         })
       })
+  }
+
+  resetSearch = () => {
+    this.setState({ parkName: ""});
+    this.setState({ parkDescription: ""})
+    this.setState({parkWeather: ""})
+    this.setState({parklatLong:""})
+    this.setState({parkCampgrounds:[]})
   }
 
 // Adding a user to the database from the register form
@@ -90,20 +107,33 @@ export default class ApplicationViews extends Component {
 
   // API Call for National Park Name:
   getParkName = (parkName) => {
-    return ApiManager.parkNameCall(`${parkName} national park`)
+     return ApiManager.parkNameCall(`${parkName} national park`)
     .then (names => {
       names.data.forEach(name => {
-        console.log(name.fullName)
+        // console.log(name.fullName)
+        // console.log(name.description)
+        // console.log(name.weatherInfo)
+        // console.log(name.latLong)
         this.setState({
-          parkName: name.fullName
+          parkName: name.fullName,
+          parkDescription:name.description,
+          parkWeather:name.weatherInfo,
+          parklatLong:name.latLong
         })
       })
     })
   }
 
+getParkCampsitesAndAminities = (parkName) => {
+  return ApiManager.parkCampAndAminCall(`${parkName} national park`)
+  .then(allParkInfo => {
+  this.setState({
+    parkCampgrounds: allParkInfo.data
+    })
+  })
 
 
-
+}
 
   render() {
     return (
@@ -114,6 +144,7 @@ export default class ApplicationViews extends Component {
             if (this.isAuthenticated()) {
             return <Searchpage {...props}
             getParkName={this.getParkName}
+            getParkCampsitesAndAminities={this.getParkCampsitesAndAminities}
             />
           } else {
             return <Redirect to="/login" />
@@ -143,6 +174,7 @@ export default class ApplicationViews extends Component {
             trips={this.state.trips}
             deleteTrip={this.deleteTrip}
             updateComponent={this.updateComponent}
+            // resetSearch={this.resetSearch}
             />
           }}
         />
@@ -153,7 +185,10 @@ export default class ApplicationViews extends Component {
         <Route path="/trips/new" render={(props) => {
             return <TripForm {...props}
                   addTrip={this.addTrip}
-                  trips={this.state.trips}  />
+                  trips={this.state.trips}
+                  parkName={this.state.parkName}
+                  resetSearch={this.resetSearch}
+                    />
         }} />
 
         {/* Route for edding a trip */}
@@ -167,13 +202,63 @@ export default class ApplicationViews extends Component {
           path="/parksMainPage" render={props => {
             return <ParksMainPage {...props}
             parkName={this.state.parkName}
+            resetSearch={this.resetSearch}
                   />
             }} />
 
 
         <Route
-          path="/tasks" render={props => {
-            return null
+          path="/parkDescription" render={props => {
+            return <ParksDescriptionPage {...props}
+            parkName={this.state.parkName}
+            parkDescription={this.state.parkDescription}
+                  />
+            }} />
+
+
+        <Route
+          path="/parkAmenities" render={props => {
+            return <ParksAmenitiesPage {...props}
+              parkName={this.state.parkName}
+              parkCampgrounds={this.state.parkCampgrounds}
+                  />
+            }} />
+
+        <Route
+          path="/parkCamping" render={props => {
+            return <ParksCampingPage {...props}
+              parkName={this.state.parkName}
+              parkCampgrounds={this.state.parkCampgrounds}
+                  />
+            }} />
+
+            <Route
+          path="/parkMapIt" render={props => {
+            return <ParksMapIt {...props}
+            parkName={this.state.parkName}
+                />
+          }} />
+
+        <Route
+          path="/parkGas" render={props => {
+            return <h1>Park Gas map here</h1>
+            // Remove null and return the component which will show the user's tasks
+          }}
+        />
+
+        <Route
+          path="/parkMarket" render={props => {
+            return <h1>Park Market map here</h1>
+            // Remove null and return the component which will show the user's tasks
+          }}
+        />
+
+        <Route
+          path="/parkWeather" render={props => {
+            return <ParksWeatherPage {...props}
+             parkName={this.state.parkName}
+            parkWeather={this.state.parkWeather}
+            />
             // Remove null and return the component which will show the user's tasks
           }}
         />

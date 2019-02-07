@@ -33,6 +33,7 @@ background-color: #B5E2E7;
 border: 6px solid black;
 margin-bottom: 50px;
 border-radius: 4px;
+margin: 15px;
 }
 
 .trips .card-title{
@@ -41,11 +42,16 @@ margin-top: -20px;
 }
 
 .trips .trashIcon{
-    margin-left:290px;
+    margin-left:260px;
 }
 
 .trips .addTripButton{
-    margin-top:20px;
-    margin-left:310px;
+    margin-top:-59px;
+    margin-left:300px;
 
+}
+
+.backToSearchButton{
+    margin-left: 20px;
+    margin-top: 20px;
 }

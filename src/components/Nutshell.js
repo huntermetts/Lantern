@@ -8,7 +8,7 @@ class Nutshell extends Component {
   render() {
     return (
       <React.Fragment>
-        <ApplicationViews />
+        <ApplicationViews/>
       </React.Fragment>
     );
   }

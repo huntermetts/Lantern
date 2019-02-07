@@ -34,10 +34,15 @@ export default class TripForm extends Component {
 
     }
 
+    backToSearch = () => {
+        this.props.resetSearch()
+        this.props.history.push("/")
+    }
+
     render() {
         return (
             <React.Fragment>
-                <img src={backArrow} onClick={() => this.props.history.push("/trips")} className="tripsBackArrow" alt="backArrow"></img>
+                <img src={backArrow} onClick={() => this.backToSearch()} className="tripsBackArrow" alt="backArrow"></img>
 
                 <h2 className="going"><strong>Going Somewhere?</strong></h2>
                 <form className="tripForm formContainer">
@@ -45,9 +50,13 @@ export default class TripForm extends Component {
                         <label htmlFor="tripName">Where Are You Headed?</label>
                         <input type="text" required
                                className="form-control"
+                            //    value={this.props.parkName}
                                onChange={this.handleFieldChange}
                                id="name"
-                               placeholder="Denali National Park" />
+                               placeholder="Denali National Park"
+
+                               >
+                        </input>
                     </div>
                     <div className="form-group">
                         <label htmlFor="dueDate">When Are You Going?</label>
