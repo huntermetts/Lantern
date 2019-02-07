@@ -18,7 +18,7 @@ export default class ParksDescriptionPage extends Component {
                      <img src={backArrow} onClick={() => this.props.history.push("/parksMainPage")} className="descriptionBackArrow" alt="backArrow"></img>
                 </section>
 
-                <h3 className="descriptionHeader"><strong>Park Info:</strong></h3>
+                <h3 className="descriptionHeader"><strong>{this.props.parkName}</strong> Info:</h3>
                 <img src={dividerLine} className="descDividerLineBottom" alt="dividerLine"></img>
                 <p className="description">{this.props.parkDescription}</p>
             </section>

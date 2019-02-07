@@ -14,6 +14,8 @@ import ApiManager from "../modules/ApiManager"
 import ParksDescriptionPage from "./Parks/ParksDescriptionPage"
 import ParksWeatherPage from "./Parks/ParksWeatherPage"
 import ParksCampingPage from "./Parks/ParksCampingPage"
+import ParksAmenitiesPage from "./Parks/ParksAmenitiesPage"
+import ParksMapIt from "./Parks/ParksMapIt"
 
 
 export default class ApplicationViews extends Component {
@@ -172,6 +174,7 @@ getParkCampsitesAndAminities = (parkName) => {
             trips={this.state.trips}
             deleteTrip={this.deleteTrip}
             updateComponent={this.updateComponent}
+            // resetSearch={this.resetSearch}
             />
           }}
         />
@@ -182,7 +185,10 @@ getParkCampsitesAndAminities = (parkName) => {
         <Route path="/trips/new" render={(props) => {
             return <TripForm {...props}
                   addTrip={this.addTrip}
-                  trips={this.state.trips}  />
+                  trips={this.state.trips}
+                  parkName={this.state.parkName}
+                  resetSearch={this.resetSearch}
+                    />
         }} />
 
         {/* Route for edding a trip */}
@@ -212,18 +218,26 @@ getParkCampsitesAndAminities = (parkName) => {
 
         <Route
           path="/parkAmenities" render={props => {
-            return <h1>Park amenities here</h1>
-            // Remove null and return the component which will show the user's tasks
-          }}
-        />
+            return <ParksAmenitiesPage {...props}
+              parkName={this.state.parkName}
+              parkCampgrounds={this.state.parkCampgrounds}
+                  />
+            }} />
 
         <Route
           path="/parkCamping" render={props => {
             return <ParksCampingPage {...props}
-            parkCampgroundSites={this.state.parkCampgroundSites}
-            parkCampgrounds={this.state.parkCampgrounds}
+              parkName={this.state.parkName}
+              parkCampgrounds={this.state.parkCampgrounds}
                   />
             }} />
+
+            <Route
+          path="/parkMapIt" render={props => {
+            return <ParksMapIt {...props}
+            parkName={this.state.parkName}
+                />
+          }} />
 
         <Route
           path="/parkGas" render={props => {

@@ -18,8 +18,8 @@ export default class ParksCampingPage extends Component {
                      <img src={backArrow} onClick={() => this.props.history.push("/parksMainPage")} className="descriptionBackArrow" alt="backArrow"></img>
                 </section>
 
-                <h3 className="descriptionHeader"><strong>Campsite Names with Site
-                Availability</strong></h3>
+                <h3 className="descriptionHeader"><strong>{this.props.parkName}</strong> Campground
+                Availability</h3>
 
                  <img src={dividerLine} className="campingDividerLineTop" alt="dividerLine"></img>
 

@@ -7,7 +7,7 @@
     margin: 15px;
     border-radius: 4px;
     width:345px;
-    height: 450px;
+    height: 440px;
     overflow: auto;
 }
 
@@ -22,4 +22,17 @@
 .campingDividerLineTop{
     margin-top:-75px;
     margin-left: 143px;
+}
+
+.parkAmen{
+    padding-bottom:5px;
+}
+
+.allAmen{
+text-align: left;
+}
+
+.mapBackArrow{
+margin-top: 20px;
+margin-left: 20px;
 }
