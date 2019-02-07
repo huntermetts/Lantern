@@ -36,3 +36,14 @@ text-align: left;
 margin-top: 20px;
 margin-left: 20px;
 }
+
+.iFrameContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.iFrameMap{
+    border:6px solid black;
+    border-radius: 4px;
+
+}
