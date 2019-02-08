@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import NavBar from "../nav/NavBar";
 import add from "./add.png"
 import backArrow from './backArrow.png'
+import pack from './pack.png'
 // import AnimalCard from "./AnimalCard"
 
 export default class Tripspage extends Component {
@@ -29,7 +30,7 @@ export default class Tripspage extends Component {
                 <div key={trip.id}>
                         <div className="card-body">
 
-                         {/* ADDING DELETE TO THE TASK PAGE */}
+                         {/* ADDING DELETE TO THE TRIP PAGE */}
                          <div className="deleteTrip" onClick={() => this.props.deleteTrip(trip.id)}>
                             <img src={trash} className="trashIcon" alt="trashIcon" height="30" width="30"></img>
                         </div>
@@ -42,6 +43,15 @@ export default class Tripspage extends Component {
                                 {trip.tripDate}
                             </h5>
 
+                        <div className="tripBackpack">
+                            <img src={pack} className="packIcon" onClick={(event) =>{
+                        event.preventDefault()
+                        this.props.getTripItems(trip.id)
+                        .then(()=> {
+                            this.props.history.push(`/trips/${trip.id}/backpack`)
+                        } )
+                        }} alt="packIcon" height="30" width="30"></img>
+                        </div>
 
                             {/* ADD LINK FOR EDITCHECK GITHUB */}
                             <button type="button"
@@ -56,14 +66,6 @@ export default class Tripspage extends Component {
                         {/* <hr></hr> */}
                     </div>
                 )}
-
-
-
-            {/* onClick={() => {
-                        this.props.history.push("/trips/new")}
-                    } */}
-
-
             </section>
             </React.Fragment>
         )

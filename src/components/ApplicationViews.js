@@ -18,6 +18,9 @@ import ParksAmenitiesPage from "./Parks/ParksAmenitiesPage"
 import ParksMapIt from "./Parks/ParksMapIt"
 import ParksGasStations from "./Parks/ParksGasStations";
 import ParksMarket from  "./Parks/ParksMarket"
+import TripFormWithName from "./Trips/TripFormWithName"
+import TripBackpack from "./Trips/TripBackpack"
+import BackpackManager from "../modules/BackpackManager";
 
 
 export default class ApplicationViews extends Component {
@@ -25,7 +28,7 @@ export default class ApplicationViews extends Component {
   state = {
     users: [],
     trips: [],
-    backpack: [],
+    backpackItems: [],
     parkName:"",
     parkDescription: "",
     parkWeather: "",
@@ -64,6 +67,15 @@ export default class ApplicationViews extends Component {
           trips: allTrips
         })
       })
+  }
+
+  getTripItems = (tripId) => {
+    return (BackpackManager.getAllItems(tripId)
+    .then(allItems => {
+      this.setState({
+        backpackItems: allItems
+      })
+    }))
   }
 
   resetSearch = () => {
@@ -105,6 +117,17 @@ export default class ApplicationViews extends Component {
           trips: trips
         })
       })
+  }
+
+
+  // Backpack:
+  deleteItem = (id, tripId) => {
+    return BackpackManager.removeAndList(id)
+    .then(() => BackpackManager.getAllItems(tripId))
+      .then(backpackItems => this.setState({
+        backpackItems: backpackItems
+      })
+      )
   }
 
   // API Call for National Park Name:
@@ -176,6 +199,7 @@ getParkCampsitesAndAminities = (parkName) => {
             trips={this.state.trips}
             deleteTrip={this.deleteTrip}
             updateComponent={this.updateComponent}
+            getTripItems={this.getTripItems}
             // resetSearch={this.resetSearch}
             />
           }}
@@ -186,6 +210,15 @@ getParkCampsitesAndAminities = (parkName) => {
           {/* Route for adding a new trip */}
         <Route path="/trips/new" render={(props) => {
             return <TripForm {...props}
+                  addTrip={this.addTrip}
+                  trips={this.state.trips}
+                  parkName={this.state.parkName}
+                  resetSearch={this.resetSearch}
+                    />
+        }} />
+
+         <Route path="/trips/newWithName" render={(props) => {
+            return <TripFormWithName {...props}
                   addTrip={this.addTrip}
                   trips={this.state.trips}
                   parkName={this.state.parkName}
@@ -266,6 +299,18 @@ getParkCampsitesAndAminities = (parkName) => {
             parkWeather={this.state.parkWeather}
             />
             // Remove null and return the component which will show the user's tasks
+          }}
+        />
+
+        <Route
+          path="/trips/:tripId(\d+)/backpack" render={props => {
+            return <TripBackpack {...props}
+             parkName={this.state.parkName}
+             trips={this.state.trips}
+             getTripItems={this.getTripItems}
+             backpackItems={this.state.backpackItems}
+             deleteItem={this.deleteItem}
+            />
           }}
         />
 

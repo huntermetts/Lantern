@@ -48,3 +48,37 @@ margin-left: 20px;
     border:6px solid black;
     border-radius: 4px;
 }
+
+.going{
+    padding-left: 7px;
+    padding-right:7px;
+}
+
+.backpackItemButton{
+    margin-left:220px;
+    margin-top: -50px;
+}
+
+.backpackTitle{
+    text-align: center;
+    padding-top:20px;
+    padding-right:2px;
+    padding-left:2px;
+    font-family: Rockwell, sans-serif;
+    line-height: 60px;
+}
+
+.containerFixed{
+    height: 270px;
+    width:345px;
+    overflow: scroll;
+}
+
+.itemsUp{
+margin-top:-45px;
+}
+
+.xButton{
+   margin:10px;
+   margin-top: 8px;
+}

@@ -80,7 +80,7 @@ export default class ParksMainPage extends Component {
                 </section>
 
                 <section className="mainButtonHolder">
-                <button type="submit" onClick={() => { this.props.history.push("/trips/new")}} className="btn btn-dark addToTrips" >Add To Trips</button>
+                <button type="submit" onClick={() => { this.props.history.push("/trips/newWithName")}} className="btn btn-dark addToTrips" >Add To Trips</button>
 
                 <button type="submit" className="btn btn-dark mapIt" onClick={() => { this.props.history.push("/parkMapIt")}} >Map It</button>
                 </section>
