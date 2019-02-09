@@ -74,6 +74,10 @@ body{
     margin-top:-137px;
 }
 
+.register .moveInputLines{
+    margin-top:-165px;
+}
+
 .everythingButTheHeader{
 margin-top: -40px;
 }
@@ -92,4 +96,29 @@ padding-right:300px;
 }
 
 
+.moveInputLinesRegister{
+    margin-top: -20px;
+}
+/* Ipad */
+/* @media (min-width: 576px) {
+    .headerRegister{
+        height: 270px;
+        width:345px;
+        overflow: scroll;
+    }
+ } */
+
+/* Desktop */
+/* @media (min-width: 1025px) {
+    .registerDividerLine{
+        padding-bottom: 000px;
+        padding-top: 10px;
+        align-self: center;
+        padding-right:1px;
+    }
+
+    /* .registerInputBox{
+        margin-top: 500px;
+    } */
+ /* } */
 

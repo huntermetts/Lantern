@@ -82,3 +82,26 @@ margin-top:-45px;
    margin:10px;
    margin-top: 8px;
 }
+
+.backpackItemsMiddle{
+display: flex;
+justify-content: space-around;
+}
+
+/* Ipad */
+@media (min-width: 576px) {
+    .containerFixed{
+        height: 270px;
+        width:345px;
+        overflow: scroll;
+    }
+ }
+
+/* Desktop */
+@media (min-width: 1025px) {
+    .containerFixed{
+        height: 270px;
+        width:345px;
+        overflow: scroll;
+    }
+ }

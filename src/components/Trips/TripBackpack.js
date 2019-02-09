@@ -28,6 +28,7 @@ export default class TripBackpack extends Component{
 
               }
 
+            <section className="backpackItemsMiddle">
             <div className="tripForm formContainer containerFixed">
             <img src={add} height="39" width="39" onClick={() => this.props.history.push("/trips")} className="backpackItemButton" alt="backpackItemButton"></img>
 
@@ -47,6 +48,7 @@ export default class TripBackpack extends Component{
             }
             </div>
             </div>
+            </section>
         </React.Fragment>
     )
 }
