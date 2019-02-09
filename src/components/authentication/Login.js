@@ -23,16 +23,20 @@ export default class Login extends Component {
     // Simplistic handler for login submit
     handleLogin = (e) => {
         e.preventDefault()
-
     //    Setting username in session storage. Grabbing the username from session storage and searching through "users" in the datatbase. The .find attempts to find a username that matches the username in session storage. If able to find a match, log in under that user. If not, display message that username not found.
-
         sessionStorage.setItem(
             "username",
-            this.state.username)
+            this.state.username,
+            // "password",
+            // this.state.password
+            )
 
         let currentUser = sessionStorage.getItem("username")
+        // let currentUserPassword = sessionStorage.getItem("password")
         let authenticated = this.props.users.find(user =>
-            user.username === currentUser)
+            user.username === currentUser
+            // && user.password === currentUserPassword
+            )
 
 
             if (authenticated === undefined){
@@ -86,7 +90,7 @@ export default class Login extends Component {
                     {/* <button type="submit" className="btn btn-primary signIn">
                         Sign in
                     </button> */}
-                    <button type="submit" className="btn btn-dark signIn" >Login</button>
+                    <button type="submit" className="btn btn-dark signIn">Login</button>
 
                     <p className="signUp"><Link className="nav-link signUpLink" to="/register">Sign Up</Link></p>
 

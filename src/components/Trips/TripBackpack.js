@@ -36,7 +36,7 @@ export default class TripBackpack extends Component{
                 this.props.backpackItems.map(item =>
                     <div key={item.id}>
                     <div>
-                        <img src={x} height="11" width="11" onClick={() => this.props.deleteItem(item.id, item.tripId)}
+                        <img src={x} height="12" width="12" onClick={() => this.props.deleteItem(item.id, item.tripId)}
                         className="xButton" alt="xButton">
                         </img>
 

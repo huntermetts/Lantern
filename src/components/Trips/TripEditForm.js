@@ -54,7 +54,7 @@ export default class TaskEditForm extends Component{
                           onChange={this.handleFieldChange}
                           id="name"
                           value={this.state.name}
-                          />
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="tripDate">When Are You Going?</label>

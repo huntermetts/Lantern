@@ -34,6 +34,11 @@
       "username": "cole",
       "password": "123",
       "id": 7
+    },
+    {
+      "username": "brit",
+      "password": "123",
+      "id": 8
     }
   ],
   "trips": [
@@ -93,11 +98,18 @@
       "id": 7
     },
     {
-      "name": "Tent",
+      "name": "The Big Tent",
       "quantity": "1",
       "userId": 1,
-      "tripId": 1,
+      "tripId": 2,
       "id": 8
+    },
+    {
+      "name": "Granola Bars",
+      "quantity": "1",
+      "userId": 1,
+      "tripId": 2,
+      "id": 9
     }
   ]
 }
