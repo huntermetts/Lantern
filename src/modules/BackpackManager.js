@@ -19,21 +19,21 @@ export default {
         return fetch(`${remoteURL}/backpackItems?userId=${sessionUserNumber}&tripId=${tripId}`)
         .then(e => e.json())
       },
-    //   delete trips
+    //   delete items
       removeAndList(id){
           return fetch(`http://localhost:5002/backpackItems/${id}`, {
               method: "DELETE"
           })
           .then(e => e.json())
   },
-//   adding a new trip
-  post(newTrip) {
-    return fetch(`${remoteURL}/trips`, {
+//   adding a new item
+  post(newItem) {
+    return fetch(`${remoteURL}/backpackItems`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(newTrip)
+      body: JSON.stringify(newItem)
     }).then(data => data.json())
   },
 

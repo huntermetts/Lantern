@@ -99,6 +99,29 @@ padding-right:300px;
 .moveInputLinesRegister{
     margin-top: -20px;
 }
+
+.signIn, .signUp{
+margin-right:14px;
+margin-left: 14px;
+}
+
+.linkText{
+    color: black;
+}
+
+.signUp{
+    margin-top:-50px;
+    background-color:rgba(209, 108, 77, .5);
+    border:3px solid black;
+    padding-right: 30px;
+    padding-left: 30px;
+    color:black;
+    font-weight: bold;
+}
+
+img{
+    cursor: pointer;
+}
 /* Ipad */
 /* @media (min-width: 576px) {
     .headerRegister{

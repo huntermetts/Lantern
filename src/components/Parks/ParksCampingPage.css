@@ -88,6 +88,11 @@ display: flex;
 justify-content: space-around;
 }
 
+.campAmenCenter{
+display: flex;
+justify-content: center;
+}
+
 /* Ipad */
 @media (min-width: 576px) {
     .containerFixed{

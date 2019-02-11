@@ -15,11 +15,15 @@ export default class ParksDescriptionPage extends Component {
 
                  {/* ADD TRIP BUTTON */}
                  <section className="descriptionButton">
+
                      <img src={backArrow} onClick={() => this.props.history.push("/parksMainPage")} className="descriptionBackArrow" alt="backArrow"></img>
                 </section>
 
                 <h3 className="descriptionHeader"><strong>{this.props.parkName}</strong> Info:</h3>
-                <img src={dividerLine} className="descDividerLineBottom" alt="dividerLine"></img>
+
+                 <div className="centerThatThing">
+                <img src={dividerLine} alt="dividerLine"></img>
+                </div>
                 <p className="description">{this.props.parkDescription}</p>
             </section>
             </React.Fragment>

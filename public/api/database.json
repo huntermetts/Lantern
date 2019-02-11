@@ -39,6 +39,11 @@
       "username": "brit",
       "password": "123",
       "id": 8
+    },
+    {
+      "username": "boston.b",
+      "password": "123",
+      "id": 9
     }
   ],
   "trips": [
@@ -59,54 +64,41 @@
       "tripDate": "2019-12-31",
       "userId": 1,
       "id": 3
+    },
+    {
+      "name": "Arches National Park",
+      "tripDate": "2020-04-04",
+      "userId": 1,
+      "id": 4
     }
   ],
   "backpackItems": [
     {
       "name": "$35",
-      "quantity": "1",
       "userId": 1,
       "tripId": 1,
       "id": 2
     },
     {
       "name": "Backpack",
-      "quantity": "1",
       "userId": 1,
       "tripId": 1,
       "id": 3
     },
     {
       "name": "Solar Charger",
-      "quantity": "1",
       "userId": 1,
       "tripId": 1,
       "id": 5
     },
     {
-      "name": "Axe",
-      "quantity": "1",
-      "userId": 1,
-      "tripId": 1,
-      "id": 6
-    },
-    {
-      "name": "Granola Bars",
-      "quantity": "1",
-      "userId": 1,
-      "tripId": 1,
-      "id": 7
-    },
-    {
       "name": "The Big Tent",
-      "quantity": "1",
       "userId": 1,
       "tripId": 2,
       "id": 8
     },
     {
       "name": "Granola Bars",
-      "quantity": "1",
       "userId": 1,
       "tripId": 2,
       "id": 9

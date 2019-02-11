@@ -21,6 +21,7 @@ import ParksMarket from  "./Parks/ParksMarket"
 import TripFormWithName from "./Trips/TripFormWithName"
 import TripBackpack from "./Trips/TripBackpack"
 import BackpackManager from "../modules/BackpackManager";
+import BackpackForm from './Trips/BackpackForm'
 
 
 export default class ApplicationViews extends Component {
@@ -129,6 +130,13 @@ export default class ApplicationViews extends Component {
       })
       )
   }
+
+  addItem = (id, tripId) => BackpackManager.post(id, tripId)
+  .then(() => BackpackManager.getAllItems(tripId))
+    .then(backpackItems => this.setState({
+      backpackItems: backpackItems
+    })
+  )
 
   // API Call for National Park Name:
   getParkName = (parkName) => {
@@ -313,6 +321,16 @@ getParkCampsitesAndAminities = (parkName) => {
             />
           }}
         />
+
+        <Route path="/trips/:tripId(\d+)/backpack/new" render={(props) => {
+            return <BackpackForm {...props}
+                  addTrip={this.addTrip}
+                  trips={this.state.trips}
+                  parkName={this.state.parkName}
+                  resetSearch={this.resetSearch}
+                  addItem={this.addItem}
+                    />
+        }} />
 
       </React.Fragment>
        );

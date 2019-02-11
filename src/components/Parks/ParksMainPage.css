@@ -69,5 +69,34 @@ justify-content: space-evenly;
 .centerThatThing{
 display: flex;
 justify-content:center;
-padding-bottom: 50px;
+    padding-bottom: 50px;
+}
+
+.parkCorrect{
+margin-left:14px;
+}
+
+.amenCorrect{
+margin-left:11px;
+}
+
+.campingCorrect{
+margin-left:14px;
+}
+
+.gasCorrect{
+margin-left:2px;
+}
+
+.marketCorrect{
+margin-left:16px;
+}
+
+.weatherCorrect{
+margin-left:17px;
+}
+
+.descLineBottom{
+margin-top:0;
+margin: auto;
 }

@@ -90,9 +90,11 @@ export default class Login extends Component {
                     {/* <button type="submit" className="btn btn-primary signIn">
                         Sign in
                     </button> */}
-                    <button type="submit" className="btn btn-dark signIn">Login</button>
+                    <div className="centerThatThing">
+                    <button type="submit" className="btn btn-dark signIn">Log In</button>
+                    </div>
 
-                    <p className="signUp"><Link className="nav-link signUpLink" to="/register">Sign Up</Link></p>
+                    <button className="btn btn-dark signUp"><Link className="linkText" to="/register">Sign Up</Link></button>
 
                 </form>
 
