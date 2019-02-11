@@ -38,6 +38,6 @@ export default {
   },
 
   get(id){
-    return fetch(`${remoteURL}/trips/${id}`).then(res => res.json())
+    return fetch(`${remoteURL}/backpackItems/${id}`).then(res => res.json())
   }
 }

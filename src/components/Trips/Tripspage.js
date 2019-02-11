@@ -54,10 +54,11 @@ export default class Tripspage extends Component {
                         </div>
 
                             {/* ADD LINK FOR EDITCHECK GITHUB */}
-                            <button type="button"
-                                className="btn btn-dark editTrip"
-                                onClick={() => this.props.history.push(`/trips/${trip.id}/edit`)}>Edit</button>
-
+                            <div className="centerButton">
+                                <button type="button"
+                                    className="btn btn-dark editTrip"
+                                    onClick={() => this.props.history.push(`/trips/${trip.id}/edit`)}>Edit</button>
+                            </div>
                              {/* <Link className="nav-link editTrip" to={`/trips/${trip.id}/edit`}>Edit</Link> */}
 
 

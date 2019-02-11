@@ -48,60 +48,48 @@
   ],
   "trips": [
     {
-      "name": "Rocky Mountain National Park",
-      "tripDate": "2019-07-04",
+      "name": "test",
+      "tripDate": "1010-01-01",
       "userId": 1,
       "id": 1
-    },
-    {
-      "name": "Denali National Park",
-      "tripDate": "2019-07-04",
-      "userId": 1,
-      "id": 2
-    },
-    {
-      "name": "Yellowstone National Park",
-      "tripDate": "2019-12-31",
-      "userId": 1,
-      "id": 3
-    },
-    {
-      "name": "Arches National Park",
-      "tripDate": "2020-04-04",
-      "userId": 1,
-      "id": 4
     }
   ],
   "backpackItems": [
     {
-      "name": "$35",
+      "name": "Matches",
+      "userId": 1,
+      "tripId": 1,
+      "id": 1
+    },
+    {
+      "name": "Fire Starter",
       "userId": 1,
       "tripId": 1,
       "id": 2
     },
     {
-      "name": "Backpack",
+      "name": "a",
       "userId": 1,
-      "tripId": 1,
+      "tripId": 2,
       "id": 3
     },
     {
-      "name": "Solar Charger",
+      "name": "b",
       "userId": 1,
-      "tripId": 1,
+      "tripId": 2,
+      "id": 4
+    },
+    {
+      "name": "c",
+      "userId": 1,
+      "tripId": 2,
       "id": 5
     },
     {
-      "name": "The Big Tent",
+      "name": "jordrosa",
       "userId": 1,
-      "tripId": 2,
-      "id": 8
-    },
-    {
-      "name": "Granola Bars",
-      "userId": 1,
-      "tripId": 2,
-      "id": 9
+      "tripId": 1,
+      "id": 6
     }
   ]
 }

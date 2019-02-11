@@ -41,7 +41,6 @@ export default class Login extends Component {
 
             if (authenticated === undefined){
                 alert("Whoops! We we couldn't find your account. Please re-renter a valid username and email or sign up below!")
-                window.location.reload()
                 // this.props.history.push("/register")
             } else {
             console.log(authenticated.id)

@@ -10,7 +10,7 @@ export default class BackpackForm extends Component {
     state = {
         name: "",
         userId: "",
-        tripId: "",
+        tripId: ""
     }
 
     // Update state whenever an input field is edited
@@ -20,10 +20,8 @@ export default class BackpackForm extends Component {
         this.setState(stateToChange)
     }
 
-    /*
-        Local method for validation, creating animal object, and
-        invoking the function reference passed from parent component
-     */
+
+
     constructNewItem = evt => {
         let sessionUser = sessionStorage.getItem("userId");
         evt.preventDefault()
@@ -51,7 +49,7 @@ export default class BackpackForm extends Component {
 
         return (
             <React.Fragment>
-                <h2 className="going"><strong>Add an item below</strong></h2>
+                <h2 className="going"><strong>Add an item</strong></h2>
                 <form className="tripForm formContainer">
                     <div className="form-group">
                         <label htmlFor="tripName">What do you want to add?</label>

@@ -22,7 +22,7 @@ import TripFormWithName from "./Trips/TripFormWithName"
 import TripBackpack from "./Trips/TripBackpack"
 import BackpackManager from "../modules/BackpackManager";
 import BackpackForm from './Trips/BackpackForm'
-
+import TripBackpackEdit from "./Trips/TripBackpackEdit"
 
 export default class ApplicationViews extends Component {
 
@@ -34,7 +34,8 @@ export default class ApplicationViews extends Component {
     parkDescription: "",
     parkWeather: "",
     parklatLong: "",
-    parkCampgrounds:[]
+    parkCampgrounds:[],
+    backpackItemEdit: ""
   };
 
   // Check if credentials are in local storage
@@ -121,6 +122,17 @@ export default class ApplicationViews extends Component {
   }
 
 
+  updateBackpack = (tripId, userId) => {
+    return BackpackManager.put(tripId)
+    .then(() => BackpackManager.getAllItems(userId))
+    .then(backpackItems => {
+      this.setState({
+        backpackItems: backpackItems
+      })
+    })
+  }
+
+
   // Backpack:
   deleteItem = (id, tripId) => {
     return BackpackManager.removeAndList(id)
@@ -167,6 +179,17 @@ getParkCampsitesAndAminities = (parkName) => {
 
 
 }
+
+// get = (id) => {
+//   return BackpackManager.get("6")
+//   .then(allItems => {
+//     this.setState({
+//       backpackItemEdit: allItems
+//     })
+//   })
+
+// }
+
 
   render() {
     return (
@@ -311,7 +334,22 @@ getParkCampsitesAndAminities = (parkName) => {
         />
 
         <Route
-          path="/trips/:tripId(\d+)/backpack" render={props => {
+         exact path="/trips/:tripId(\d+)/backpack/:backpackId(\d+)/edit" render={props => {
+            return <TripBackpackEdit {...props}
+             parkName={this.state.parkName}
+             trips={this.state.trips}
+             getTripItems={this.getTripItems}
+             backpackItems={this.state.backpackItems}
+             deleteItem={this.deleteItem}
+             updateBackpack={this.updateBackpack}
+             get={this.get}
+             backpackEditItem={this.state.backpackItemEdit}
+            />
+          }}
+        />
+
+        <Route
+          exact path="/trips/:tripId(\d+)/backpack" render={props => {
             return <TripBackpack {...props}
              parkName={this.state.parkName}
              trips={this.state.trips}

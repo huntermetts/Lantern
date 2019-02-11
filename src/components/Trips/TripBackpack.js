@@ -6,7 +6,12 @@ import add from "./add.png"
 import TripsManager from '../../modules/TripsManager';
 import x from "./x.png"
 
+
+
+
+
 export default class TripBackpack extends Component{
+
   render() {
 
     const trip = this.props.trips.find(a => a.id === parseInt(this.props.match.params.tripId)) || {}
@@ -29,6 +34,7 @@ export default class TripBackpack extends Component{
               }
 
             <section className="backpackItemsMiddle">
+            <div className="EditOutsideBox">
             <div className="tripForm formContainer containerFixed">
             <img src={add} height="39" width="39" onClick={() => this.props.history.push(`/trips/${trip.id}/backpack/new`)} className="backpackItemButton" alt="backpackItemButton"></img>
 
@@ -41,14 +47,24 @@ export default class TripBackpack extends Component{
                         className="xButton" alt="xButton">
                         </img>
 
+                        <div onClick={() => this.props.history.push(`/trips/${trip.id}/backpack/${item.id}/edit`)}>
                         {item.name}
+                        </div>
                         </div>
                     </div>
                 )
             }
+
             </div>
+            </div>
+            {/* <button type="button"
+                        className="btn btn-dark editTrip editPack"
+                        onClick={() => this.props.history.push(`/trips/${trip.id}/backpack/${this.props.backpackItems.id}/edit`)}>
+                        Edit
+                </button> */}
             </div>
             </section>
+
         </React.Fragment>
     )
 }
