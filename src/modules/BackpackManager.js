@@ -2,8 +2,8 @@ const remoteURL = "http://localhost:5002"
 
 export default {
     // "Put" for the edit
-    put(tripId, existingTrip){
-      return fetch(`${remoteURL}/trips/${tripId}`,{
+    put(itemId, existingTrip){
+      return fetch(`${remoteURL}/backpackItems/${itemId}`,{
         method:'PUT',
         headers:{
           "Content-Type": "application/JSON"

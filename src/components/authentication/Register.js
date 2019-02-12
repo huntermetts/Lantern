@@ -80,6 +80,7 @@ export default class Register extends Component {
                         <section className="moveInputLines">
                         <input onChange={this.handleFieldChange} type="text"
                             id="username"
+                            maxlength="18"
                             placeholder="Enter a username"
                             required autoFocus="" />
                             <br></br>
@@ -89,6 +90,7 @@ export default class Register extends Component {
                         <input onChange={this.handleFieldChange} type="password"
                             id="password"
                             placeholder="Enter a password"
+                            maxlength="18"
                             required />
                             <br></br>
                             </section>

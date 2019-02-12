@@ -65,6 +65,9 @@ export default class Login extends Component {
                     <label htmlFor="inputUsername">
                     </label> <br></br>
 
+
+                    <p className="appDesc">We make camping in our National Parks easy</p>
+
                     <section className="everythingButTheHeader">
                     <img src={inputBox} className="inputBox" alt="inputBox"></img>
                     </section>

@@ -122,6 +122,12 @@ margin-left: 14px;
 img{
     cursor: pointer;
 }
+
+.appDesc{
+    padding-bottom: 30px;
+    margin-top:-55px;
+    color:#757575;
+}
 /* Ipad */
 /* @media (min-width: 576px) {
     .headerRegister{

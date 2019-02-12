@@ -17,6 +17,7 @@ export default class TripBackpackEdit extends Component{
     const stateToChange = {}
     stateToChange[evt.target.id] = evt.target.value
     this.setState(stateToChange)
+    console.log(stateToChange)
 }
 
 // backpackItemTest = () => {
@@ -27,7 +28,8 @@ export default class TripBackpackEdit extends Component{
 // }
 
   componentDidMount(){
-    BackpackManager.get(this.props.match.params.tripId).then(items => {
+    BackpackManager.get(this.props.match.params.tripId).then(items =>
+    { console.log(items)
       this.setState({
         name:items.name,
         tripId: items.tripdId,
@@ -42,18 +44,20 @@ export default class TripBackpackEdit extends Component{
 
       const existingItem = {
         name:this.state.name ,
-        tripId: this.state.tripId,
-        userId: this.state.userId
+        tripId: this.props.match.params.tripId,
+        userId: Number(sessionStorage.getItem("userId"))
       }
+      console.log(existingItem)
+      console.log(this.props.match.params.backpackId)
       this.props.updateBackpack(this.props.match.params.backpackId, existingItem)
 
       .then(() => this.props.history.push(`/trips/${trip.id}/backpack`))
     }
 
   render() {
-
-    console.log(this.props.match.params.backpackId)
-    console.log("PROPS",this.props.backpackItemEdit)
+    console.log("tripId",this.props.match.params.tripId)
+    console.log("backpackId",this.props.match.params.backpackId)
+    console.log("PROPS",this.props)
 
     const trip = this.props.trips.find(a => a.id === parseInt(this.props.match.params.tripId)) || {}
 
@@ -84,12 +88,13 @@ export default class TripBackpackEdit extends Component{
 {
 
 //   this.props.backpackItems.map(item =>
-//       <div key={item.id}>
-//       <div>
-//           <input className="form-control form-control-sm editFormBackpack mb-3 mt-4" placeholder={item.name}>
-//           </input>
-//           </div>
-//       </div>
+    //   <div key={item.id}>
+      <div>
+      <input className="form-control form-control-sm editFormBackpack mb-3 mt-4" id="name" onChange={this.handleFieldChange} >
+          {/* <input className="form-control form-control-sm editFormBackpack mb-3 mt-4" placeholder={item.name}> */}
+          </input>
+          </div>
+    //   </div>
 //   )
 }
 

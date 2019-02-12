@@ -122,9 +122,9 @@ export default class ApplicationViews extends Component {
   }
 
 
-  updateBackpack = (tripId, userId) => {
-    return BackpackManager.put(tripId)
-    .then(() => BackpackManager.getAllItems(userId))
+  updateBackpack = (tripId, existingTrip) => {
+    return BackpackManager.put(tripId, existingTrip)
+    .then(() => BackpackManager.getAllItems(sessionStorage.getItem("userId")))
     .then(backpackItems => {
       this.setState({
         backpackItems: backpackItems
