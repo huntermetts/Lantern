@@ -6,10 +6,10 @@ import NavBar from "../nav/NavBar";
 import add from "./add.png"
 import backArrow from './backArrow.png'
 import pack from './pack.png'
-// import AnimalCard from "./AnimalCard"
+import Moment from 'react-moment'
+
 
 export default class Tripspage extends Component {
-
     render () {
         return (
             <React.Fragment>
@@ -40,7 +40,7 @@ export default class Tripspage extends Component {
                                 <strong>Location:</strong> <br></br>
                                 {trip.name}<br></br> <br></br>
                                 <strong>Date:</strong> <br></br>
-                                {trip.tripDate}
+                                <Moment format="DD MMM, YYYY">{trip.tripDate}</Moment>
                             </h5>
 
                         <div className="tripBackpack">

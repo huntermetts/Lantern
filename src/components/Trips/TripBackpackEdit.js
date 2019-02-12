@@ -90,7 +90,7 @@ export default class TripBackpackEdit extends Component{
 //   this.props.backpackItems.map(item =>
     //   <div key={item.id}>
       <div>
-      <input className="form-control form-control-sm editFormBackpack mb-3 mt-4" id="name" onChange={this.handleFieldChange} >
+      <input className="form-control form-control-sm editFormBackpack mb-3 mt-4" id="name" value={this.state.name} onChange={this.handleFieldChange} >
           {/* <input className="form-control form-control-sm editFormBackpack mb-3 mt-4" placeholder={item.name}> */}
           </input>
           </div>
