@@ -55,9 +55,9 @@ export default class TripBackpackEdit extends Component{
     }
 
   render() {
-    console.log("tripId",this.props.match.params.tripId)
-    console.log("backpackId",this.props.match.params.backpackId)
-    console.log("PROPS",this.props)
+    // console.log("tripId",this.props.match.params.tripId)
+    // console.log("backpackId",this.props.match.params.backpackId)
+    // console.log("PROPS",this.props)
 
     const trip = this.props.trips.find(a => a.id === parseInt(this.props.match.params.tripId)) || {}
 
@@ -90,7 +90,7 @@ export default class TripBackpackEdit extends Component{
 //   this.props.backpackItems.map(item =>
     //   <div key={item.id}>
       <div>
-      <input className="form-control form-control-sm editFormBackpack mb-3 mt-4" id="name" value={this.state.name} onChange={this.handleFieldChange} >
+      <input className="form-control form-control-sm editFormBackpack mb-3 mt-4" id="name" onChange={this.handleFieldChange} >
           {/* <input className="form-control form-control-sm editFormBackpack mb-3 mt-4" placeholder={item.name}> */}
           </input>
           </div>

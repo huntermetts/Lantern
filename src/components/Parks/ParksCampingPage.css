@@ -26,10 +26,11 @@
 
 .parkAmen{
     padding-bottom:5px;
+    flex-basis: 100%;
 }
 
 .allAmen{
-text-align: left;
+padding-top:30px;
 }
 
 .mapBackArrow{
@@ -91,6 +92,7 @@ justify-content: space-around;
 .campAmenCenter{
 display: flex;
 justify-content: center;
+flex-wrap: wrap;
 }
 
 /* Ipad */
