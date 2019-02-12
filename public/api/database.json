@@ -1,35 +1,16 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "userName",
-      "password": "123"
+      "username": "USERNAME",
+      "password": "123",
+      "id": 1
     },
     {
-      "username": "jordan",
+      "username": "JORDAN.ROSAS",
       "password": "123",
       "id": 2
-    },
-    {
-      "username": "hunter.james.metts",
-      "password": "123",
-      "id": 3
     }
   ],
-  "trips": [
-    {
-      "name": "test",
-      "tripDate": "1010-01-01",
-      "userId": 1,
-      "id": 1
-    }
-  ],
-  "backpackItems": [
-    {
-      "name": "firewood",
-      "userId": 1,
-      "tripId": 1,
-      "id": 1
-    }
-  ]
+  "trips": [],
+  "backpackItems": []
 }

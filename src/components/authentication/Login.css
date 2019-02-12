@@ -105,8 +105,8 @@ margin-right:14px;
 margin-left: 14px;
 }
 
-.linkText{
-    color: black;
+.linkText:hover{
+    color: white;
 }
 
 .signUp{
@@ -115,7 +115,7 @@ margin-left: 14px;
     border:3px solid black;
     padding-right: 30px;
     padding-left: 30px;
-    color:black;
+
     font-weight: bold;
 }
 
@@ -126,7 +126,22 @@ img{
 .appDesc{
     padding-bottom: 30px;
     margin-top:-55px;
-    color:#757575;
+    color:#333333;
+}
+
+.qAa{
+padding-top:25px;
+padding-bottom:-40px;
+margin-bottom: -15px;
+
+}
+
+.appDescRegister{
+    color:#333333;
+    padding-bottom: 70px;
+    margin-top:-40px;
+    padding-right:15px;
+    padding-left:15px;
 }
 /* Ipad */
 /* @media (min-width: 576px) {

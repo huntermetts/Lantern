@@ -120,6 +120,7 @@ margin-top: -40px;
 
 .logoutLink{
 margin-top:0px;
-color: black;
+color: #333333;
 margin-right:260px;
+cursor: pointer;
 }

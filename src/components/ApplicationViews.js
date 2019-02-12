@@ -220,6 +220,7 @@ getParkCampsitesAndAminities = (parkName) => {
 
         <Route exact path="/register" render={(props) => {
           return <Register {...props}
+            users={this.state.users}
             addUser={this.addUser}
             updateComponent={this.updateComponent}/>
         }} />

@@ -28,25 +28,18 @@ export default class Register extends Component {
     // Simplistic handler for login submit
     handleRegister = (e) => {
         e.preventDefault()
-
-        /*
-            For now, just store the email and password that
-            the customer enters into local storage.
-        */
-        // sessionStorage.setItem(
-        //     "credentials",
-        //     JSON.stringify({
-        //         username: this.state.username,
-        //         password: this.state.password,
-        //         id: this.state.id
-        //     })
-        // )
     }
 
 
     constructNewUser = () => {
+
+        let userNameCheck = this.props.users.find(user =>
+            user.username === this.state.username
+            )
+
+        if (userNameCheck === undefined){
             const user = {
-                username: this.state.username,
+                username: this.state.username.toUpperCase(),
                 password: this.state.password,
                 id: this.state.id
             }
@@ -56,6 +49,11 @@ export default class Register extends Component {
                 this.props.updateComponent()
                 this.props.history.push("/login")
             })
+        } else {
+            alert("This username is already being used... Please enter a unique username")
+            this.props.history.push("/register")
+        }
+
     }
 
     render() {
@@ -68,6 +66,8 @@ export default class Register extends Component {
                     <h2>Sign up for</h2>
                     <h1><strong>L A N T E R N</strong></h1>
                     <img src={dividerLine} className="loginDividerLine" alt="dividerLine"></img>
+
+                     <p className="appDescRegister">Sign up to explore all 58 of America's National Parks.</p>
 
                      <section className="everythingButTheHeader">
                     <img src={inputBox} className="registerInputBox" alt="inputBox"></img>
@@ -98,6 +98,7 @@ export default class Register extends Component {
                     <button type="submit" onClick={() => this.constructNewUser()} className="btn btn-dark    signIn">
                         Sign Up
                     </button>
+
                 </form>
 
             </section>
