@@ -77,13 +77,18 @@ export default class ParksAmenitiesPage extends Component {
                      <img src={backArrow} onClick={() => this.props.history.push("/parksMainPage")} className="descriptionBackArrow" alt="backArrow"></img>
                 </section>
 
+
+
                 <h3 className="descriptionHeader"><strong>{this.props.parkName}</strong> Campground
                 Amenities</h3>
 
-                 <img src={dividerLine} className="campingDividerLineTop" alt="dividerLine"></img>
+                <div className="centerThatThing">
+                    <img src={dividerLine} alt="dividerLine"></img>
+                 </div>
 
 
-                <div className="campDescription">
+            <section className="campAmenCenter">
+                <div className="campDescription campAmenCenter">
                 {this.props.parkCampgrounds.map(campground => (
                     <div>
                         <h4><strong>{campground.name}:</strong><br></br></h4>
@@ -107,6 +112,7 @@ export default class ParksAmenitiesPage extends Component {
                     </div>
                 ))}
                 </div>
+                </section>
                 {/* {this.props.parkCampgroundSites} */}
             </section>
             </React.Fragment>

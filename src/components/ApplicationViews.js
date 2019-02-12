@@ -18,19 +18,24 @@ import ParksAmenitiesPage from "./Parks/ParksAmenitiesPage"
 import ParksMapIt from "./Parks/ParksMapIt"
 import ParksGasStations from "./Parks/ParksGasStations";
 import ParksMarket from  "./Parks/ParksMarket"
-
+import TripFormWithName from "./Trips/TripFormWithName"
+import TripBackpack from "./Trips/TripBackpack"
+import BackpackManager from "../modules/BackpackManager";
+import BackpackForm from './Trips/BackpackForm'
+import TripBackpackEdit from "./Trips/TripBackpackEdit"
 
 export default class ApplicationViews extends Component {
 
   state = {
     users: [],
     trips: [],
-    backpack: [],
+    backpackItems: [],
     parkName:"",
     parkDescription: "",
     parkWeather: "",
     parklatLong: "",
-    parkCampgrounds:[]
+    parkCampgrounds:[],
+    backpackItemEdit: ""
   };
 
   // Check if credentials are in local storage
@@ -64,6 +69,15 @@ export default class ApplicationViews extends Component {
           trips: allTrips
         })
       })
+  }
+
+  getTripItems = (tripId) => {
+    return (BackpackManager.getAllItems(tripId)
+    .then(allItems => {
+      this.setState({
+        backpackItems: allItems
+      })
+    }))
   }
 
   resetSearch = () => {
@@ -107,6 +121,35 @@ export default class ApplicationViews extends Component {
       })
   }
 
+
+  updateBackpack = (tripId, existingTrip) => {
+    return BackpackManager.put(tripId, existingTrip)
+    .then(() => BackpackManager.getAllItems(sessionStorage.getItem("userId")))
+    .then(backpackItems => {
+      this.setState({
+        backpackItems: backpackItems
+      })
+    })
+  }
+
+
+  // Backpack:
+  deleteItem = (id, tripId) => {
+    return BackpackManager.removeAndList(id)
+    .then(() => BackpackManager.getAllItems(tripId))
+      .then(backpackItems => this.setState({
+        backpackItems: backpackItems
+      })
+      )
+  }
+
+  addItem = (id, tripId) => BackpackManager.post(id, tripId)
+  .then(() => BackpackManager.getAllItems(tripId))
+    .then(backpackItems => this.setState({
+      backpackItems: backpackItems
+    })
+  )
+
   // API Call for National Park Name:
   getParkName = (parkName) => {
      return ApiManager.parkNameCall(`${parkName} national park`)
@@ -137,6 +180,17 @@ getParkCampsitesAndAminities = (parkName) => {
 
 }
 
+// get = (id) => {
+//   return BackpackManager.get("6")
+//   .then(allItems => {
+//     this.setState({
+//       backpackItemEdit: allItems
+//     })
+//   })
+
+// }
+
+
   render() {
     return (
       <React.Fragment>
@@ -166,6 +220,7 @@ getParkCampsitesAndAminities = (parkName) => {
 
         <Route exact path="/register" render={(props) => {
           return <Register {...props}
+            users={this.state.users}
             addUser={this.addUser}
             updateComponent={this.updateComponent}/>
         }} />
@@ -176,6 +231,7 @@ getParkCampsitesAndAminities = (parkName) => {
             trips={this.state.trips}
             deleteTrip={this.deleteTrip}
             updateComponent={this.updateComponent}
+            getTripItems={this.getTripItems}
             // resetSearch={this.resetSearch}
             />
           }}
@@ -186,6 +242,15 @@ getParkCampsitesAndAminities = (parkName) => {
           {/* Route for adding a new trip */}
         <Route path="/trips/new" render={(props) => {
             return <TripForm {...props}
+                  addTrip={this.addTrip}
+                  trips={this.state.trips}
+                  parkName={this.state.parkName}
+                  resetSearch={this.resetSearch}
+                    />
+        }} />
+
+         <Route path="/trips/newWithName" render={(props) => {
+            return <TripFormWithName {...props}
                   addTrip={this.addTrip}
                   trips={this.state.trips}
                   parkName={this.state.parkName}
@@ -268,6 +333,43 @@ getParkCampsitesAndAminities = (parkName) => {
             // Remove null and return the component which will show the user's tasks
           }}
         />
+
+        <Route
+         exact path="/trips/:tripId(\d+)/backpack/:backpackId(\d+)/edit" render={props => {
+            return <TripBackpackEdit {...props}
+             parkName={this.state.parkName}
+             trips={this.state.trips}
+             getTripItems={this.getTripItems}
+             backpackItems={this.state.backpackItems}
+             deleteItem={this.deleteItem}
+             updateBackpack={this.updateBackpack}
+             get={this.get}
+             backpackEditItem={this.state.backpackItemEdit}
+            />
+          }}
+        />
+
+        <Route
+          exact path="/trips/:tripId(\d+)/backpack" render={props => {
+            return <TripBackpack {...props}
+             parkName={this.state.parkName}
+             trips={this.state.trips}
+             getTripItems={this.getTripItems}
+             backpackItems={this.state.backpackItems}
+             deleteItem={this.deleteItem}
+            />
+          }}
+        />
+
+        <Route path="/trips/:tripId(\d+)/backpack/new" render={(props) => {
+            return <BackpackForm {...props}
+                  addTrip={this.addTrip}
+                  trips={this.state.trips}
+                  parkName={this.state.parkName}
+                  resetSearch={this.resetSearch}
+                  addItem={this.addItem}
+                    />
+        }} />
 
       </React.Fragment>
        );

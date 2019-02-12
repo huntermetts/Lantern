@@ -53,8 +53,8 @@ export default class TaskEditForm extends Component{
                           className="form-control"
                           onChange={this.handleFieldChange}
                           id="name"
-                          placeholder={this.state.name}
-                          />
+                          value={this.state.name}
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="tripDate">When Are You Going?</label>
@@ -62,7 +62,7 @@ export default class TaskEditForm extends Component{
                           className="form-control"
                           onChange={this.handleFieldChange}
                           id="tripDate"
-                          placeholder={this.state.tripDate}
+                          value={this.state.tripDate}
                           />
                 </div>
                 <button type="submit" onClick={this.updateExistingTrip} className="btn btn-dark updateTrip">Update</button>

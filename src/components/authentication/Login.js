@@ -23,21 +23,29 @@ export default class Login extends Component {
     // Simplistic handler for login submit
     handleLogin = (e) => {
         e.preventDefault()
-
     //    Setting username in session storage. Grabbing the username from session storage and searching through "users" in the datatbase. The .find attempts to find a username that matches the username in session storage. If able to find a match, log in under that user. If not, display message that username not found.
-
         sessionStorage.setItem(
             "username",
-            this.state.username)
+            this.state.username.toUpperCase()
+            )
+        sessionStorage.setItem(
+            "password",
+            this.state.password
+        )
+
+
+        console.log(sessionStorage.getItem("username"))
+        console.log(sessionStorage.getItem("password"))
 
         let currentUser = sessionStorage.getItem("username")
+        let currentUserPassword = sessionStorage.getItem("password")
         let authenticated = this.props.users.find(user =>
-            user.username === currentUser)
+            user.username === currentUser && user.password === currentUserPassword
+            )
 
 
             if (authenticated === undefined){
-                alert("Whoops! We we couldn't find your account. Please re-renter a valid username and email or sign up below!")
-                window.location.reload()
+                alert("Whoops! We we couldn't find your account. Please re-renter a valid username and password or sign up below!")
                 // this.props.history.push("/register")
             } else {
             console.log(authenticated.id)
@@ -62,6 +70,9 @@ export default class Login extends Component {
                     <label htmlFor="inputUsername">
                     </label> <br></br>
 
+
+                    <p className="appDesc">We make camping in our National Parks easy.</p>
+
                     <section className="everythingButTheHeader">
                     <img src={inputBox} className="inputBox" alt="inputBox"></img>
                     </section>
@@ -73,8 +84,7 @@ export default class Login extends Component {
                             placeholder="Username"
                             required autoFocus="" />
                             <br></br>
-                        <label htmlFor="inputEmail">
-                        </label>
+
                         <br></br>
                         <input onChange={this.handleFieldChange} type="password"
                             id="password"
@@ -86,9 +96,11 @@ export default class Login extends Component {
                     {/* <button type="submit" className="btn btn-primary signIn">
                         Sign in
                     </button> */}
-                    <button type="submit" className="btn btn-dark signIn" >Login</button>
+                    <div className="centerThatThing">
+                    <button type="submit" className="btn btn-dark signIn">Log In</button>
+                    </div>
 
-                    <p className="signUp"><Link className="nav-link signUpLink" to="/register">Sign Up</Link></p>
+                    <button className="btn btn-dark signUp"><Link style={{ textDecoration: 'none', color:'black'}} className="linkText" to="/register">Sign Up</Link></button>
 
                 </form>
 

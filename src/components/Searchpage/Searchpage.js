@@ -18,6 +18,11 @@ class Searchpage extends Component {
         this.setState(stateToChange)
     }
 
+    clearSession = () => {
+        sessionStorage.clear();
+        this.props.history.push("./login")
+    }
+
 
     render() {
         let name = sessionStorage.getItem('username');
@@ -33,7 +38,10 @@ class Searchpage extends Component {
 
                     <img src={dividerLine} className="searchDividerLine" alt="dividerLine"></img>
 
+
+
                     <section className="everythingButTheHeader">
+                    <div className="logoutLink" onClick={this.clearSession} to="/login">Logout</div>
                     <img src={inputBox} className="inputBox" alt="inputBox"></img>
                     </section>
 

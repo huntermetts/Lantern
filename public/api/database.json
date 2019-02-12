@@ -1,41 +1,16 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "userName",
-      "password": "123"
-    },
-    {
-      "username": "mary",
+      "username": "USERNAME",
       "password": "123",
-      "id": 2
-    },
-    {
-      "username": "austin",
-      "password": "123",
-      "id": 3
-    }
-  ],
-  "trips": [
-    {
-      "name": "Rocky Mountain National Park",
-      "tripDate": "2019-07-04",
-      "userId": 1,
       "id": 1
     },
     {
-      "name": "Arches",
-      "tripDate": "2020-12-25",
-      "userId": 1,
+      "username": "JORDAN.ROSAS",
+      "password": "123",
       "id": 2
     }
   ],
-  "backpack": [
-    {
-      "name": "Tent",
-      "quantity": "1",
-      "tripsId": 1,
-      "id": 1
-    }
-  ]
+  "trips": [],
+  "backpackItems": []
 }

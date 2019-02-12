@@ -19,7 +19,9 @@ export default class ParksWeatherPage extends Component {
                 </section>
 
                 <h3 className="descriptionHeader"><strong>{this.props.parkName}</strong> Weather:</h3>
-                <img src={dividerLine} className="descDividerLineBottom" alt="dividerLine"></img>
+                    <div className="centerThatThing">
+                        <img src={dividerLine} alt="dividerLine"></img>
+                    </div>
                 <p className="description">{this.props.parkWeather}</p>
             </section>
             </React.Fragment>

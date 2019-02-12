@@ -23,6 +23,17 @@
     font-weight: bold;
 }
 
+.cancelTrip{
+    margin-top:30px;
+    background-color:rgba(209, 108, 77, .5);
+    border:3px solid black;
+    padding-right: 30px;
+    padding-left: 30px;
+    color:black;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
 .tripsBackArrow{
     margin-top: 20px;
     margin-left:20px;
@@ -50,3 +61,28 @@
     font-family: Rockwell, sans-serif;
 }
 
+.editPack{
+    margin-top:0px;
+    margin-left: 18px;
+}
+
+.editOutsideBox{
+display: flex;
+justify-content: center;
+}
+
+.updateBackpack{
+    margin-top:20px;
+    background-color:rgba(209, 108, 77, .5);
+    border:3px solid black;
+    padding-right: 30px;
+    padding-left: 30px;
+    color:black;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.editFormBackpack{
+padding:10px;
+font-weight: bold;
+}

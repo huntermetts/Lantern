@@ -74,6 +74,10 @@ body{
     margin-top:-137px;
 }
 
+.register .moveInputLines{
+    margin-top:-165px;
+}
+
 .everythingButTheHeader{
 margin-top: -40px;
 }
@@ -90,3 +94,75 @@ margin-top: -40px;
 padding-top: 20px;
 padding-right:300px;
 }
+
+
+.moveInputLinesRegister{
+    margin-top: -20px;
+}
+
+.signIn, .signUp{
+margin-right:14px;
+margin-left: 14px;
+}
+
+.linkText:hover{
+    color: white;
+}
+
+.signUp{
+    margin-top:-50px;
+    background-color:rgba(209, 108, 77, .5);
+    border:3px solid black;
+    padding-right: 30px;
+    padding-left: 30px;
+
+    font-weight: bold;
+}
+
+img{
+    cursor: pointer;
+}
+
+.appDesc{
+    padding-bottom: 30px;
+    margin-top:-55px;
+    color:#333333;
+}
+
+.qAa{
+padding-top:25px;
+padding-bottom:-40px;
+margin-bottom: -15px;
+
+}
+
+.appDescRegister{
+    color:#333333;
+    padding-bottom: 70px;
+    margin-top:-40px;
+    padding-right:15px;
+    padding-left:15px;
+}
+/* Ipad */
+/* @media (min-width: 576px) {
+    .headerRegister{
+        height: 270px;
+        width:345px;
+        overflow: scroll;
+    }
+ } */
+
+/* Desktop */
+/* @media (min-width: 1025px) {
+    .registerDividerLine{
+        padding-bottom: 000px;
+        padding-top: 10px;
+        align-self: center;
+        padding-right:1px;
+    }
+
+    /* .registerInputBox{
+        margin-top: 500px;
+    } */
+ /* } */
+

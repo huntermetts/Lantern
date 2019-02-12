@@ -47,11 +47,53 @@ margin-top: -20px;
 
 .trips .addTripButton{
     margin-top:-59px;
-    margin-left:300px;
-
+    margin-right:-18rem;
 }
 
 .backToSearchButton{
     margin-left: 20px;
     margin-top: 20px;
 }
+
+.packIcon{
+margin-left: 260px;
+margin-top:40px;
+}
+
+.editTrip{
+margin-top:-50px;
+}
+
+/* Ipad */
+@media (min-width: 576px) {
+    .trips .addTripButton{
+        margin-top:-59px;
+        margin-right:-43rem;
+    }
+
+    .trips .trashIcon{
+            margin-left:600px;
+        }
+
+ .packIcon{
+    margin-left: 600px;
+     margin-top:40px;
+     }
+ }
+
+/* Desktop */
+@media (min-width: 1025px) {
+    .trips .addTripButton{
+        margin-top:-59px;
+        margin-left:210px;
+    }
+
+    .trips .trashIcon{
+        margin-left:900px;
+    }
+
+    .packIcon{
+        margin-left: 900px;
+         margin-top:40px;
+         }
+ }

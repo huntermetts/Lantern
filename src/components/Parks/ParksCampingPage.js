@@ -11,28 +11,32 @@ export default class ParksCampingPage extends Component {
     render () {
         return (
             <React.Fragment>
-            <section className="parkDescriptionContainer">
 
                  {/* ADD TRIP BUTTON */}
                  <section className="descriptionButton">
                      <img src={backArrow} onClick={() => this.props.history.push("/parksMainPage")} className="descriptionBackArrow" alt="backArrow"></img>
                 </section>
 
+                <section className="parkCampingContainer">
                 <h3 className="descriptionHeader"><strong>{this.props.parkName}</strong> Campground
                 Availability</h3>
 
-                 <img src={dividerLine} className="campingDividerLineTop" alt="dividerLine"></img>
+                <div className="centerThatThing">
+                    <img src={dividerLine}alt="dividerLine"></img>
+                </div>
 
 
+                <section className="campAmenCenter">
                 <div className="campDescription">
                 {this.props.parkCampgrounds.map(campground => (
                     <div>
                         <h4><strong>{campground.name}:</strong><br></br></h4>
                         <p className="siteBottom">{campground.campsites.totalSites} sites available</p>
-                        <img src={dividerLine} className="campingDividerLineBottom" alt="dividerLine"></img>
+                        <img src={dividerLine} alt="dividerLine"></img>
                     </div>
                 ))}
                 </div>
+                </section>
                 {/* {this.props.parkCampgroundSites} */}
             </section>
             </React.Fragment>

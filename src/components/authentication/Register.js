@@ -28,25 +28,18 @@ export default class Register extends Component {
     // Simplistic handler for login submit
     handleRegister = (e) => {
         e.preventDefault()
-
-        /*
-            For now, just store the email and password that
-            the customer enters into local storage.
-        */
-        // sessionStorage.setItem(
-        //     "credentials",
-        //     JSON.stringify({
-        //         username: this.state.username,
-        //         password: this.state.password,
-        //         id: this.state.id
-        //     })
-        // )
     }
 
 
     constructNewUser = () => {
+
+        let userNameCheck = this.props.users.find(user =>
+            user.username === this.state.username
+            )
+
+        if (userNameCheck === undefined){
             const user = {
-                username: this.state.username,
+                username: this.state.username.toUpperCase(),
                 password: this.state.password,
                 id: this.state.id
             }
@@ -55,41 +48,57 @@ export default class Register extends Component {
                 console.log(response)
                 this.props.updateComponent()
                 this.props.history.push("/login")
-                // window.location.reload();
             })
+        } else {
+            alert("This username is already being used... Please enter a unique username")
+            this.props.history.push("/register")
+        }
+
     }
 
     render() {
         return (
             <section className="register">
             <img src={backArrow} onClick={() => this.props.history.push("/login")} className="registerBackArrow" alt="backArrow"></img>
-                <form onSubmit={this.handleRegister}>
-                {/* <img src={back} onClick={() => this.props.history.push("/login")} className="backButton" alt="backButton" height="30" width="30"></img> */}
+                <form className="registerContainer"onSubmit={this.handleRegister}>
+
+                <div>
                     <h2>Sign up for</h2>
                     <h1><strong>L A N T E R N</strong></h1>
-                    <img src={dividerLine} className="registerDividerLine" alt="dividerLine"></img>
+                    <img src={dividerLine} className="loginDividerLine" alt="dividerLine"></img>
+
+                     <p className="appDescRegister">Sign up to explore all 58 of America's National Parks.</p>
+
+                     <section className="everythingButTheHeader">
                     <img src={inputBox} className="registerInputBox" alt="inputBox"></img>
+                    </section>
                     <label htmlFor="inputUsername">
                     </label><br></br>
+                </div>
 
-                    <section className="moveInputLines">
-                    <input onChange={this.handleFieldChange} type="text"
-                        id="username"
-                        placeholder="Enter a username"
-                        required autoFocus="" />
+                    <div className="moveInputLinesRegister">
+                        <section className="moveInputLines">
+                        <input onChange={this.handleFieldChange} type="text"
+                            id="username"
+                            maxlength="18"
+                            placeholder="Enter a username"
+                            required autoFocus="" />
+                            <br></br>
+                        <label htmlFor="inputPassword">
+                        </label>
                         <br></br>
-                    <label htmlFor="inputPassword">
-                    </label>
-                    <br></br>
-                    <input onChange={this.handleFieldChange} type="password"
-                        id="password"
-                        placeholder="Enter a password"
-                        required />
-                        <br></br>
-                        </section>
-                    <button type="submit" onClick={() => this.constructNewUser()} className="btn btn-primary signIn">
+                        <input onChange={this.handleFieldChange} type="password"
+                            id="password"
+                            placeholder="Enter a password"
+                            maxlength="18"
+                            required />
+                            <br></br>
+                            </section>
+                        </div>
+                    <button type="submit" onClick={() => this.constructNewUser()} className="btn btn-dark    signIn">
                         Sign Up
                     </button>
+
                 </form>
 
             </section>

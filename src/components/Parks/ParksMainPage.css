@@ -10,65 +10,24 @@
 
 .iconContainer{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
-.detailsIcon{
-    margin-top:30px;
-    margin-bottom:70px;
+.descCont{
+    flex-basis: 33%;
 }
 
-.amenitiesIcon{
-    margin-top:30px;
-    margin-bottom:70px;
+.amenCont{
+    flex-basis: 33%;
 }
 
-.campingIcon{
-    margin-top:30px;
-    margin-bottom:70px;
+.marketsCont{
+    flex-basis: 33%;
 }
 
-.mainPageDividerLine{
-   margin-left: 142px;
-   margin-top:-20px;
-}
-
-.parkfeatures{
-    display: inline;
-}
-
-.gasCorrect{
-    margin-left: 1px;
-    margin-top: 7px;
-}
-
-.marketCorrect{
-    margin-left: 19px;
-    margin-top: 7px;
-}
-
-.weatherCorrect{
-    margin-left: 17px;
-    margin-top: 7px;
-}
-
-.parkCorrect{
-    margin-left: 15px;
-    margin-top: -63px;
-    margin-bottom: 20px;
-}
-
-.amenCorrect{
-    margin-left: 11px;
-    margin-top: -63px;
-    margin-bottom: 20px;
-}
-
-.campingCorrect{
-    margin-left: 13px;
-    margin-top: -63px;
-    margin-bottom: 20px;
+.gasCont{
+    flex-basis: 33%;
 }
 
 .addToTrips{
@@ -100,4 +59,44 @@ justify-content: space-evenly;
     text-align: center;
     padding: 25px;
     line-height: 50px;
+}
+
+.centerThatPic{
+    display: flex;
+    justify-content:center;
+}
+
+.centerThatThing{
+display: flex;
+justify-content:center;
+    padding-bottom: 50px;
+}
+
+.parkCorrect{
+margin-left:14px;
+}
+
+.amenCorrect{
+margin-left:11px;
+}
+
+.campingCorrect{
+margin-left:14px;
+}
+
+.gasCorrect{
+margin-left:2px;
+}
+
+.marketCorrect{
+margin-left:16px;
+}
+
+.weatherCorrect{
+margin-left:17px;
+}
+
+.descLineBottom{
+margin-top:0;
+margin: auto;
 }
