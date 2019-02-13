@@ -249,6 +249,7 @@ getParkCampsitesAndAminities = (parkName) => {
           path="/login" render={props => {
             return <Login {...props}
             users={this.state.users}
+            addUser={this.addUser}
             updateComponent={this.updateComponent}
             />
           }}
