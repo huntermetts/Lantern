@@ -143,6 +143,10 @@ margin-bottom: -15px;
     padding-right:15px;
     padding-left:15px;
 }
+
+.signUp{
+    color:black;
+}
 /* Ipad */
 /* @media (min-width: 576px) {
     .headerRegister{

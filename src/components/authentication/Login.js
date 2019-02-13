@@ -100,14 +100,12 @@ export default class Login extends Component {
                     <button type="submit" className="btn btn-dark signIn">Log In</button>
                     </div>
 
-                    <button className="btn btn-dark signUp"><Link style={{ textDecoration: 'none', color:'black'}} className="linkText" to="/register">Sign Up</Link></button>
+                    <Link style={{ textDecoration: 'none', color:'black'}} className="linkText" to="/register">
+                    <button className="btn btn-dark signUp">Sign Up</button>
+                    </Link>
 
                 </form>
-
             </section>
         )
     }
-
-
-    // onClick={() => this.props.history.push("/news")}
 }
