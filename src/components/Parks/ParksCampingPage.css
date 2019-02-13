@@ -95,6 +95,11 @@ justify-content: center;
 flex-wrap: wrap;
 }
 
+.centerWeather{
+    display: flex;
+    justify-content: center;
+}
+
 /* Ipad */
 @media (min-width: 576px) {
     .containerFixed{

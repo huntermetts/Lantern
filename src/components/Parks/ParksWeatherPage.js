@@ -14,6 +14,7 @@ export default class ParksWeatherPage extends Component {
             <section className="parkDescriptionContainer">
 
                  {/* ADD TRIP BUTTON */}
+
                  <section className="descriptionButton">
                      <img src={backArrow} onClick={() => this.props.history.push("/parksMainPage")} className="descriptionBackArrow" alt="backArrow"></img>
                 </section>
@@ -22,7 +23,9 @@ export default class ParksWeatherPage extends Component {
                     <div className="centerThatThing">
                         <img src={dividerLine} alt="dividerLine"></img>
                     </div>
-                <p className="description">{this.props.parkWeather}</p>
+                    <div className="centerWeather">
+                        <p className="description">{this.props.parkWeather}</p>
+                    </div>
             </section>
             </React.Fragment>
         )
