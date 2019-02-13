@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import "./TripForm.css"
 import backArrow from './backArrow.png'
+// import Moment from 'react-moment'
+// import AddToCalendar from 'react-add-to-calendar'
 
 export default class TripFormWithName extends Component {
     // Set initial state

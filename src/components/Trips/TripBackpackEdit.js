@@ -55,9 +55,9 @@ export default class TripBackpackEdit extends Component{
     }
 
   render() {
-    console.log("tripId",this.props.match.params.tripId)
-    console.log("backpackId",this.props.match.params.backpackId)
-    console.log("PROPS",this.props)
+    // console.log("tripId",this.props.match.params.tripId)
+    // console.log("backpackId",this.props.match.params.backpackId)
+    // console.log("PROPS",this.props)
 
     const trip = this.props.trips.find(a => a.id === parseInt(this.props.match.params.tripId)) || {}
 

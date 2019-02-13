@@ -6,11 +6,18 @@
       "id": 1
     },
     {
-      "username": "JORDAN.ROSAS",
+      "username": "ASIA",
       "password": "123",
       "id": 2
     }
   ],
-  "trips": [],
+  "trips": [
+    {
+      "name": "Yellowstone National Park",
+      "tripDate": "2019-07-04",
+      "userId": 1,
+      "id": 2
+    }
+  ],
   "backpackItems": []
 }
