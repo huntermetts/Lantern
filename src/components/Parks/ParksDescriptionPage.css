@@ -18,11 +18,17 @@
     padding-top:20px;
     font-family: Rockwell, sans-serif;
     padding-bottom:20px;
-
 }
 
 
 .descDividerLineBottom{
     margin-top:-75px;
     margin-left: 143px;
+}
+
+.imgPosition{
+    margin:25px;
+    border: 6px solid black;
+    border-radius: 4px;
+    cursor: auto;
 }

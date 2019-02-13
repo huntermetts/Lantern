@@ -4,11 +4,16 @@ import { Link } from "react-router-dom";
 import backArrow from './backArrow.png'
 import dividerLine from "./dividerLine.png"
 
+
 // import AnimalCard from "./AnimalCard"
 
 export default class ParksDescriptionPage extends Component {
 
     render () {
+
+       this.props.getParkImg(this.props.parkLat, this.props.parkLong)
+    //    console.log(this.props.parkImages)
+
         return (
             <React.Fragment>
             <section className="parkDescriptionContainer">
@@ -24,7 +29,17 @@ export default class ParksDescriptionPage extends Component {
                  <div className="centerThatThing">
                 <img src={dividerLine} alt="dividerLine"></img>
                 </div>
-                <p className="description">{this.props.parkDescription}</p>
+
+                <div className="description">
+                <p>{this.props.parkDescription}</p>
+
+                <section className="imagesContainter">
+                {this.props.parkImages.map(image => (
+                    <img src={image} alt="parkPic" className="imgPosition" height="220" width="220"></img>
+                ))}
+                </section>
+
+                </div>
             </section>
             </React.Fragment>
         )

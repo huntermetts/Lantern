@@ -35,7 +35,10 @@ export default class ApplicationViews extends Component {
     parkWeather: "",
     parklatLong: "",
     parkCampgrounds:[],
-    backpackItemEdit: ""
+    backpackItemEdit: "",
+    parkLat:"",
+    parkLong:"",
+    parkImages:[]
   };
 
   // Check if credentials are in local storage
@@ -86,6 +89,9 @@ export default class ApplicationViews extends Component {
     this.setState({parkWeather: ""})
     this.setState({parklatLong:""})
     this.setState({parkCampgrounds:[]})
+    this.setState({parkLat:""})
+    this.setState({parkLong:""})
+    this.setState({parkImages:[]})
   }
 
 // Adding a user to the database from the register form
@@ -158,7 +164,7 @@ export default class ApplicationViews extends Component {
         // console.log(name.fullName)
         // console.log(name.description)
         // console.log(name.weatherInfo)
-        console.log(name.latLong)
+        // console.log(name.latLong)
         this.setState({
           parkName: name.fullName,
           parkDescription:name.description,
@@ -166,8 +172,47 @@ export default class ApplicationViews extends Component {
           parklatLong:name.latLong
         })
       })
+      this.getLatLongNumbers()
     })
   }
+
+  getLatLongNumbers = () => {
+    let lat = this.state.parklatLong.split(' ');
+    // console.log(lat[0])
+    let latString = lat[0].toString()
+    let latNumber = latString.substring(4, 15)
+    // console.log(latNumber)
+
+    let long = this.state.parklatLong.split(' ');
+    // console.log(long[1])
+    let longString = long[1].toString()
+    let longNumber = longString.substring(5, 16)
+    // console.log(longNumber)
+
+    this.setState({
+      parkLat:latNumber,
+      parkLong:longNumber
+    })
+  }
+
+  getParkImg = (lat, long) => {
+
+    // let imgArray = []
+
+    return ApiManager.parkImgCall(lat, long)
+    .then(allParkInfo => {
+      // console.log(allWeather.data)
+
+    let allImg = allParkInfo.trails.map(trail => {
+      // console.log(trail.imgMedium)
+     return trail.imgMedium
+      })
+      this.setState({
+        parkImages: allImg
+      })
+    })
+  }
+
 
 getParkCampsitesAndAminities = (parkName) => {
   return ApiManager.parkCampAndAminCall(`${parkName} national park`)
@@ -180,18 +225,9 @@ getParkCampsitesAndAminities = (parkName) => {
 
 }
 
-// get = (id) => {
-//   return BackpackManager.get("6")
-//   .then(allItems => {
-//     this.setState({
-//       backpackItemEdit: allItems
-//     })
-//   })
-
-// }
-
 
   render() {
+    // console.log(this.state.parkImages)
     return (
       <React.Fragment>
 
@@ -270,6 +306,8 @@ getParkCampsitesAndAminities = (parkName) => {
             return <ParksMainPage {...props}
             parkName={this.state.parkName}
             resetSearch={this.resetSearch}
+            parkLat={this.state.parkLat}
+            parkLong={this.state.parkLong}
                   />
             }} />
 
@@ -279,6 +317,10 @@ getParkCampsitesAndAminities = (parkName) => {
             return <ParksDescriptionPage {...props}
             parkName={this.state.parkName}
             parkDescription={this.state.parkDescription}
+            parkLat={this.state.parkLat}
+            parkLong={this.state.parkLong}
+            getParkImg={this.getParkImg}
+            parkImages={this.state.parkImages}
                   />
             }} />
 
