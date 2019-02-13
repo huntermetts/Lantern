@@ -17,26 +17,8 @@ export default class TripBackpackEdit extends Component{
     const stateToChange = {}
     stateToChange[evt.target.id] = evt.target.value
     this.setState(stateToChange)
-    console.log(stateToChange)
+    // console.log(stateToChange)
 }
-
-// backpackItemTest = () => {
-//     this.props.get(this.props.match.params.backpackId)
-//     .then(item => console.log(item.name)
-
-//     )
-// }
-
-  componentDidMount(){
-    BackpackManager.get(this.props.match.params.tripId).then(items =>
-    { console.log(items)
-      this.setState({
-        name:items.name,
-        tripId: items.tripdId,
-        userId: items.userId
-      })
-    })
-  }
 
   updateExistingItem = evt => {
     const trip = this.props.trips.find(a => a.id === parseInt(this.props.match.params.tripId)) || {}
@@ -44,12 +26,13 @@ export default class TripBackpackEdit extends Component{
 
       const existingItem = {
         name:this.state.name ,
-        tripId: this.props.match.params.tripId,
+        tripId: Number(this.props.match.params.tripId),
         userId: Number(sessionStorage.getItem("userId"))
       }
-      console.log(existingItem)
-      console.log(this.props.match.params.backpackId)
+    //   console.log(existingItem)
+    //   console.log(this.props.match.params.backpackId)
       this.props.updateBackpack(this.props.match.params.backpackId, existingItem)
+      .then(() => this.props.getTripItems(trip.id))
 
       .then(() => this.props.history.push(`/trips/${trip.id}/backpack`))
     }

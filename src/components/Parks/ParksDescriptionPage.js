@@ -34,8 +34,10 @@ export default class ParksDescriptionPage extends Component {
                 <p>{this.props.parkDescription}</p>
 
                 <section className="imagesContainter">
-                {this.props.parkImages.slice(0, 4).map(image => (
+                {this.props.parkImages.slice(0, 4).map((image, i) => (
+                    <div key={i}>
                     <img src={image} alt="parkPic" className="imgPosition" height="230" width="230"></img>
+                    </div>
                 ))}
                 </section>
 

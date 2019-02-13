@@ -29,10 +29,12 @@ export default class ParksCampingPage extends Component {
                 <section className="campAmenCenter">
                 <div className="campDescription">
                 {this.props.parkCampgrounds.map(campground => (
+                    <div key={campground.id}>
                     <div>
                         <h4><strong>{campground.name}:</strong><br></br></h4>
                         <p className="siteBottom">{campground.campsites.totalSites} sites available</p>
                         <img src={dividerLine} alt="dividerLine"></img>
+                    </div>
                     </div>
                 ))}
                 </div>

@@ -90,6 +90,7 @@ export default class ParksAmenitiesPage extends Component {
             <section className="campAmenCenter">
                 <div className="campDescription campAmenCenter">
                 {this.props.parkCampgrounds.map(campground => (
+                    <div key={campground.id}>
                     <div>
                         <h4><strong>{campground.name}:</strong><br></br></h4>
 
@@ -109,6 +110,7 @@ export default class ParksAmenitiesPage extends Component {
 
                         <img src={dividerLine} className="campingDividerLineBottom" alt="dividerLine"></img>
 
+                    </div>
                     </div>
                 ))}
                 </div>

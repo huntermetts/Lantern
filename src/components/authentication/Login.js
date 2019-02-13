@@ -68,7 +68,7 @@ export default class Login extends Component {
                 authenticated.id)
                 // UPDATING THE COMPONENT WITHOUT REFRESHING THE PAGE
                 this.props.updateComponent()
-                // Taking user to news page
+                // Taking user to home page
                 this.props.history.push("/")
             }
     }
@@ -115,7 +115,7 @@ export default class Login extends Component {
 
         <div>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                <ModalHeader className="loginModalHeader" toggle={this.toggle}><h2 className="modalLantern">L A N T E R N</h2></ModalHeader>
+                <ModalHeader className="loginModalHeader" toggle={this.toggle}><div className="modalLantern">L A N T E R N</div></ModalHeader>
                 <ModalBody>
                     Sign up to explore America's 58 National Parks.
                     <section className="registerModal">
@@ -125,7 +125,7 @@ export default class Login extends Component {
                         <section className="moveInputLines">
                         <input onChange={this.handleFieldChange} type="text"
                             id="username"
-                            maxlength="18"
+                            maxLength="18"
                             placeholder="Enter a username"
                             required autoFocus="" />
                             <br></br>
@@ -135,7 +135,7 @@ export default class Login extends Component {
                         <input onChange={this.handleFieldChange} type="password"
                             id="password"
                             placeholder="Enter a password"
-                            maxlength="18"
+                            maxLength="18"
                             required />
                             <br></br>
                             </section>

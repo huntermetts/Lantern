@@ -56,7 +56,7 @@ export default class TripFormWithName extends Component {
                             //    onChange={this.handleFieldChange}
                                id="name"
                                value={this.props.parkName}
-
+                               readOnly
                                >
                         </input>
                     </div>

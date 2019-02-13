@@ -13,7 +13,7 @@ export default {
       })
     },
     // getting all trips:
-    getAllTrips() {
+    getUserTrips() {
       let sessionUser = sessionStorage.getItem("userId")
       let sessionUserNumber = Number(sessionUser)
         return fetch(`${remoteURL}/trips?userId=${sessionUserNumber}`)

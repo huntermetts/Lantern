@@ -14,15 +14,55 @@
       "username": "BOOMBOOM",
       "password": "123",
       "id": 3
+    },
+    {
+      "username": "JORDAN",
+      "password": "1234",
+      "id": 4
+    },
+    {
+      "username": "ANDY",
+      "password": "1234",
+      "id": 5
+    },
+    {
+      "username": "ANDY2.0",
+      "password": "1234",
+      "id": 6
     }
   ],
   "trips": [
     {
-      "name": "Yellowstone National Park",
+      "name": "Yellowstone National Forrest",
       "tripDate": "2019-07-04",
       "userId": 1,
       "id": 2
+    },
+    {
+      "name": "Yosemite National Park",
+      "tripDate": "2019-09-12",
+      "userId": 3,
+      "id": 3
+    },
+    {
+      "name": "Glacier National Park",
+      "tripDate": "2019-09-12",
+      "userId": 5,
+      "id": 5
+    },
+    {
+      "name": "Arches National Park",
+      "tripDate": "2020-12-29",
+      "userId": 1,
+      "id": 6
     }
   ],
-  "backpackItems": []
+  "backpackItems": [
+    {
+      "name": "AXES",
+      "tripId": 2,
+      "userId": 1,
+      "id": 1
+    }
+  ]
 }

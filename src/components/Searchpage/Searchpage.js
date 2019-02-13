@@ -46,14 +46,14 @@ class Searchpage extends Component {
                     </section>
 
 
-                    <form className="moveInputLines" >
+                    <div className="moveInputLines" >
                         <input onChange={this.handleFieldChange} type="text"
                             id="searchParkName"
                             required
                             placeholder="Search & Explore"
                              autoFocus="" />
                             <br></br>
-                    </form>
+                    </div>
                     <button type="submit" onClick={(event) =>{
                         event.preventDefault()
                         this.props.getParkName(this.state.searchParkName)

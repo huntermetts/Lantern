@@ -51,7 +51,7 @@ export default class ApplicationViews extends Component {
     })
 
     // GETTING all trips for user:
-    TripsManager.getAllTrips()
+    TripsManager.getUserTrips()
       .then(allTrips => {
         this.setState({
           trips: allTrips
@@ -66,12 +66,20 @@ export default class ApplicationViews extends Component {
       this.setState({ users: allUsers });
     })
 
-    TripsManager.getAllTrips()
+    TripsManager.getUserTrips()
       .then(allTrips => {
         this.setState({
           trips: allTrips
         })
       })
+
+
+    return BackpackManager.getAllItems()
+    .then(allItems => {
+      this.setState({
+    backpackItems: allItems
+      })
+    })
   }
 
   getTripItems = (tripId) => {
@@ -102,7 +110,7 @@ export default class ApplicationViews extends Component {
   // TRIPS:
   deleteTrip = (id) => {
     return TripsManager.removeAndList(id)
-    .then(() => TripsManager.getAllTrips())
+    .then(() => TripsManager.getUserTrips())
       .then(trips => this.setState({
         trips: trips
       })
@@ -110,7 +118,7 @@ export default class ApplicationViews extends Component {
   }
 
   addTrip = (trip) => TripsManager.post(trip)
-  .then(() => TripsManager.getAllTrips())
+  .then(() => TripsManager.getUserTrips())
     .then(trips => this.setState({
       trips: trips
     })
@@ -119,7 +127,7 @@ export default class ApplicationViews extends Component {
   //  EDIT A TRIP:
   updateTrip = (tripId, editedTripObj) => {
     return TripsManager.put(tripId, editedTripObj)
-      .then(() => TripsManager.getAllTrips())
+      .then(() => TripsManager.getUserTrips())
       .then(trips => {
         this.setState({
           trips: trips
@@ -388,6 +396,7 @@ getParkCampsitesAndAminities = (parkName) => {
              updateBackpack={this.updateBackpack}
              get={this.get}
              backpackEditItem={this.state.backpackItemEdit}
+             updateComponent={this.updateComponent}
             />
           }}
         />
