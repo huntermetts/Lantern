@@ -1,4 +1,9 @@
-const remoteURL = "http://localhost:5002";
+const remoteURL = "http://localhost:5002"
+
+// "http://9544d2d5.ngrok.io"
+
+
+// "http://localhost:5002";
 
 export default {
   get(id) {

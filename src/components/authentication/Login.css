@@ -16,6 +16,10 @@ body{
     width: 60%;
 }
 
+.loginModalHeader{
+    font-family: Rockwell, sans-serif;
+}
+
 .login h2{
     padding-top:78px;
     font-family: Rockwell, sans-serif;
@@ -51,10 +55,16 @@ body{
 
 #username{
     font-weight: bold;
+    border: 3px solid black;
+    border-radius: 3px;
+    padding:4px;
 }
 
 #password{
     font-weight: bold;
+    border: 3px solid black;
+    border-radius: 3px;
+    padding:4px;
 }
 
 .loginDividerLine{
@@ -84,6 +94,11 @@ margin-top: -40px;
 
 .registerInputBox{
     margin-top:-40px;
+    cursor: auto;
+}
+
+.inputBox{
+    cursor: auto;
 }
 
 .searchParkButton{
@@ -142,6 +157,24 @@ margin-bottom: -15px;
     margin-top:-40px;
     padding-right:15px;
     padding-left:15px;
+}
+
+.signUp{
+    color:black;
+}
+
+.modalButton{
+    margin-top:0px;
+}
+
+.registerModal{
+    margin-top:150px;
+}
+
+.modalLantern{
+    margin-bottom: -20px;
+    padding: 10px;
+    font-size: 30px;
 }
 /* Ipad */
 /* @media (min-width: 576px) {

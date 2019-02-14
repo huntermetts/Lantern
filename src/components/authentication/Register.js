@@ -45,7 +45,7 @@ export default class Register extends Component {
             }
 
             this.props.addUser(user).then(response => {
-                console.log(response)
+                // console.log(response)
                 this.props.updateComponent()
                 this.props.history.push("/login")
             })

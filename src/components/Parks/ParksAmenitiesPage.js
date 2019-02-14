@@ -16,14 +16,14 @@ export default class ParksAmenitiesPage extends Component {
         if (cellService){
             cellService = "None"
         } else {
-            console.log("cellService is wrong")
+            // console.log("cellService is wrong")
         }
 
 
        let water;
         this.props.parkCampgrounds.forEach(campsiteWater => {
             let runningWaterArray = campsiteWater.amenities.potableWater
-            console.log("Array:", runningWaterArray)
+            // console.log("Array:", runningWaterArray)
 
             if (runningWaterArray.length===0){
                 water = "None"
@@ -37,7 +37,7 @@ export default class ParksAmenitiesPage extends Component {
         let firewood;
         this.props.parkCampgrounds.forEach(campsiteFirewood => {
             let firewoodArray = campsiteFirewood.amenities.firewoodForSale
-            console.log(firewoodArray)
+            // console.log(firewoodArray)
 
             if (firewoodArray.length < 1){
                 firewood = "None"
@@ -50,7 +50,7 @@ export default class ParksAmenitiesPage extends Component {
         let trash;
         this.props.parkCampgrounds.forEach(campsiteTrash => {
             let trashArray = campsiteTrash.amenities.trashRecyclingCollection
-            console.log(trashArray)
+            // console.log(trashArray)
 
             if (trashArray.length < 1){
                 trash = "None"
@@ -90,6 +90,7 @@ export default class ParksAmenitiesPage extends Component {
             <section className="campAmenCenter">
                 <div className="campDescription campAmenCenter">
                 {this.props.parkCampgrounds.map(campground => (
+                    <div key={campground.id}>
                     <div>
                         <h4><strong>{campground.name}:</strong><br></br></h4>
 
@@ -109,6 +110,7 @@ export default class ParksAmenitiesPage extends Component {
 
                         <img src={dividerLine} className="campingDividerLineBottom" alt="dividerLine"></img>
 
+                    </div>
                     </div>
                 ))}
                 </div>

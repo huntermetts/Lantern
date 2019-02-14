@@ -1,5 +1,10 @@
 const remoteURL = "http://localhost:5002"
 
+// "http://9544d2d5.ngrok.io"
+
+
+// "http://localhost:5002"
+
 export default {
     // "Put" for the edit
     put(tripId, existingTrip){
@@ -13,7 +18,7 @@ export default {
       })
     },
     // getting all trips:
-    getAllTrips() {
+    getUserTrips() {
       let sessionUser = sessionStorage.getItem("userId")
       let sessionUserNumber = Number(sessionUser)
         return fetch(`${remoteURL}/trips?userId=${sessionUserNumber}`)
@@ -21,11 +26,11 @@ export default {
       },
     //   delete trips
       removeAndList(id){
-          return fetch(`http://localhost:5002/trips/${id}`, {
+          return fetch(`${remoteURL}/trips/${id}`, {
               method: "DELETE"
           })
           .then(e => e.json())
-          .then(() => fetch(`http://localhost:5002/trips`))
+          .then(() => fetch(`${remoteURL}/trips`))
           .then(e => e.json())
   },
 //   adding a new trip
