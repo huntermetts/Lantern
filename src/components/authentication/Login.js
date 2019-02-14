@@ -89,7 +89,7 @@ export default class Login extends Component {
 
         if (userNameCheck === undefined){
             const user = {
-                username: this.state.username.toUpperCase(),
+                username: this.state.username.toUpperCase().trim(),
                 password: this.state.password,
                 id: this.state.id
             }

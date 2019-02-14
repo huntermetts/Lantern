@@ -16,6 +16,7 @@ class Searchpage extends Component {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
+        console.log(this.state.searchParkName)
     }
 
     clearSession = () => {
@@ -56,8 +57,8 @@ class Searchpage extends Component {
                     </div>
                     <button type="submit" onClick={(event) =>{
                         event.preventDefault()
-                        this.props.getParkName(this.state.searchParkName)
-                        this.props.getParkCampsitesAndAminities(this.state.searchParkName)
+                        this.props.getParkName(this.state.searchParkName.trim())
+                        this.props.getParkCampsitesAndAminities(this.state.searchParkName.trim())
                         .then(()=> {
                             this.props.history.push("/parksMainPage")
                         } )

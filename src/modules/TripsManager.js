@@ -1,4 +1,7 @@
-const remoteURL = "http://localhost:5002"
+const remoteURL = "http://9544d2d5.ngrok.io"
+
+
+// "http://localhost:5002"
 
 export default {
     // "Put" for the edit
@@ -21,11 +24,11 @@ export default {
       },
     //   delete trips
       removeAndList(id){
-          return fetch(`http://localhost:5002/trips/${id}`, {
+          return fetch(`${remoteURL}/trips/${id}`, {
               method: "DELETE"
           })
           .then(e => e.json())
-          .then(() => fetch(`http://localhost:5002/trips`))
+          .then(() => fetch(`${remoteURL}/trips`))
           .then(e => e.json())
   },
 //   adding a new trip

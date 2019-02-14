@@ -174,7 +174,7 @@ export default class ApplicationViews extends Component {
         // console.log(name.weatherInfo)
         // console.log(name.latLong)
         this.setState({
-          parkName: name.fullName,
+          parkName: name.fullName.trim(),
           parkDescription:name.description,
           parkWeather:name.weatherInfo,
           parklatLong:name.latLong

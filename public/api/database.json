@@ -29,6 +29,31 @@
       "username": "ANDY2.0",
       "password": "1234",
       "id": 6
+    },
+    {
+      "username": "RUSS",
+      "password": "123",
+      "id": 7
+    },
+    {
+      "username": "ELLIHELMINTOLLER",
+      "password": "elli",
+      "id": 8
+    },
+    {
+      "username": "JMETTS",
+      "password": "jeongo",
+      "id": 9
+    },
+    {
+      "username": "SPACENAME",
+      "password": "1234",
+      "id": 10
+    },
+    {
+      "username": "HMETTS",
+      "password": "Hunter9",
+      "id": 11
     }
   ],
   "trips": [
@@ -55,6 +80,18 @@
       "tripDate": "2020-12-29",
       "userId": 1,
       "id": 6
+    },
+    {
+      "name": "Arches National Park",
+      "tripDate": "2019-02-13",
+      "userId": 8,
+      "id": 7
+    },
+    {
+      "name": "Grand Canyon National Park",
+      "tripDate": "2019-02-13",
+      "userId": 8,
+      "id": 8
     }
   ],
   "backpackItems": [
@@ -63,6 +100,12 @@
       "tripId": 2,
       "userId": 1,
       "id": 1
+    },
+    {
+      "name": "Firewood",
+      "userId": 8,
+      "tripId": 7,
+      "id": 2
     }
   ]
 }
