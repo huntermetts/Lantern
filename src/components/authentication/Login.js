@@ -47,8 +47,8 @@ export default class Login extends Component {
         )
 
 
-        console.log(sessionStorage.getItem("username"))
-        console.log(sessionStorage.getItem("password"))
+        // console.log(sessionStorage.getItem("username"))
+        // console.log(sessionStorage.getItem("password"))
 
         let currentUser = sessionStorage.getItem("username")
         let currentUserPassword = sessionStorage.getItem("password")
@@ -61,7 +61,7 @@ export default class Login extends Component {
                 alert("Whoops! We we couldn't find your account. Please re-renter a valid username and password or sign up below!")
                 // this.props.history.push("/register")
             } else {
-            console.log(authenticated.id)
+            // console.log(authenticated.id)
 
             sessionStorage.setItem(
                 "userId",
@@ -95,7 +95,7 @@ export default class Login extends Component {
             }
 
             this.props.addUser(user).then(response => {
-                console.log(response)
+                // console.log(response)
                 this.setState({
                     modal: false
                   })

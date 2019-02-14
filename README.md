@@ -12,7 +12,7 @@ You can:
 - See gas stations near that park.
 - See Markets near that park.
 
-![](lantern.gif)
+![](lanternShowcase.mov)
 
 ## To Download and Use The App:
 1. Clone our repo with the "Clone or download" button above this README (it will be on the right side of your screen).

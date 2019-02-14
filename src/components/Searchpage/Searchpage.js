@@ -16,7 +16,7 @@ class Searchpage extends Component {
         const stateToChange = {}
         stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
-        console.log(this.state.searchParkName)
+        // console.log(this.state.searchParkName)
     }
 
     clearSession = () => {
