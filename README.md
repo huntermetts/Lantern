@@ -27,7 +27,7 @@ You can:
 1. Run `json-server -p 5002 -w database.json`
 1. Once in the browser open your developer tools
 1. Toggle the device toolbar (to the right of inspector button)
-1. Set the device size to "iPhone 6/7/8"
+1. Set the device size to whatever you please!
 1. Refresh the page in your browser
 1. After steps listed above are complete you should be ready to use the app!
 Thanks and happy camping!

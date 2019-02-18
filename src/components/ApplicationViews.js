@@ -23,6 +23,7 @@ import TripBackpack from "./Trips/TripBackpack"
 import BackpackManager from "../modules/BackpackManager";
 import BackpackForm from './Trips/BackpackForm'
 import TripBackpackEdit from "./Trips/TripBackpackEdit"
+import Callback from "../Callback"
 
 export default class ApplicationViews extends Component {
 
@@ -422,6 +423,8 @@ getParkCampsitesAndAminities = (parkName) => {
                   addItem={this.addItem}
                     />
         }} />
+
+         <Route exact path='/callback' component={Callback}/>
 
       </React.Fragment>
        );

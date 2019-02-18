@@ -1,11 +1,9 @@
 {
   "users": [
-    {
-      "username": "HUNTER.M",
-      "password": "1234",
-      "id": 8
-    }
+
   ],
-  "trips": [],
+  "trips": [
+
+  ],
   "backpackItems": []
 }
