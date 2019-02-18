@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import dividerLine from'./dividerLine.png';
 import inputBox from'./inputBox.png';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import auth0Client from '../../Auth';
 
 
 
@@ -19,6 +20,14 @@ export default class Login extends Component {
 
         this.toggle = this.toggle.bind(this);
     }
+
+
+    // AUTH0
+    signOut = () => {
+        auth0Client.signOut();
+        this.props.history.replace('/');
+      };
+    // AUTH0
 
     toggle() {
         this.setState(prevState => ({
@@ -191,10 +200,22 @@ export default class Login extends Component {
 
                 </form>
             </section>
+
+
+
+ {/* AUTH0 TEST
+            {
+        !auth0Client.isAuthenticated() &&
+        <button className="btn btn-dark" onClick={auth0Client.signIn}>Sign In</button>
+      }
+      {
+        auth0Client.isAuthenticated() &&
+        <div>
+          <label className="mr-2 text-white">{auth0Client.getProfile().name}</label>
+          <button className="btn btn-dark" onClick={() => {this.signOut()}}>Sign Out</button>
+        </div>
+      } */}
       </div>
-
-
-
 
         )
     }
