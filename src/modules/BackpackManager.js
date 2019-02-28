@@ -1,5 +1,5 @@
 const remoteURL =  process.env.NODE_ENV === 'production'
-? "/"
+? ""
 : "http://localhost:5002/";
 
 // "http://9544d2d5.ngrok.io"
