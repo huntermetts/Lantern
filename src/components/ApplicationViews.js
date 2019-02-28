@@ -181,7 +181,7 @@ export default class ApplicationViews extends Component {
           parklatLong:name.latLong
         })
       })
-      this.getLatLongNumbers()
+      // this.getLatLongNumbers()
     })
   }
 
