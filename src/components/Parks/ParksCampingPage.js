@@ -32,7 +32,7 @@ export default class ParksCampingPage extends Component {
                     <div key={campground.id}>
                     <div>
                         <h4><strong>{campground.name}:</strong><br></br></h4>
-                        <p className="siteBottom">{campground.campsites.totalSites} sites available</p>
+                        <p className="siteBottom">{campground.campsites.totalsites} sites available</p>
                         <img src={dividerLine} alt="dividerLine"></img>
                     </div>
                     </div>

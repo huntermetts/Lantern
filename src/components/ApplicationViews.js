@@ -170,10 +170,10 @@ export default class ApplicationViews extends Component {
      return ApiManager.parkNameCall(`${parkName} national park`)
     .then (names => {
       names.data.forEach(name => {
-        // console.log(name.fullName)
-        // console.log(name.description)
-        // console.log(name.weatherInfo)
-        // console.log(name.latLong)
+        console.log(name.fullName)
+        console.log(name.description)
+        console.log(name.weatherInfo)
+        console.log(name.latLong)
         this.setState({
           parkName: name.fullName.trim(),
           parkDescription:name.description,

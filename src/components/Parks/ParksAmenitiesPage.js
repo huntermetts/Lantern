@@ -19,10 +19,11 @@ export default class ParksAmenitiesPage extends Component {
             // console.log("cellService is wrong")
         }
 
+        console.log(this.props.parkCampgrounds);
 
        let water;
         this.props.parkCampgrounds.forEach(campsiteWater => {
-            let runningWaterArray = campsiteWater.amenities.potableWater
+            let runningWaterArray = campsiteWater.amenities.potablewater
             // console.log("Array:", runningWaterArray)
 
             if (runningWaterArray.length===0){
@@ -36,7 +37,7 @@ export default class ParksAmenitiesPage extends Component {
 
         let firewood;
         this.props.parkCampgrounds.forEach(campsiteFirewood => {
-            let firewoodArray = campsiteFirewood.amenities.firewoodForSale
+            let firewoodArray = campsiteFirewood.amenities.firewoodforsale
             // console.log(firewoodArray)
 
             if (firewoodArray.length < 1){
@@ -49,7 +50,7 @@ export default class ParksAmenitiesPage extends Component {
 
         let trash;
         this.props.parkCampgrounds.forEach(campsiteTrash => {
-            let trashArray = campsiteTrash.amenities.trashRecyclingCollection
+            let trashArray = campsiteTrash.amenities.trashrecyclingcollection
             // console.log(trashArray)
 
             if (trashArray.length < 1){
